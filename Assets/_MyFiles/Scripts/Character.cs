@@ -6,8 +6,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class Character : MonoBehaviour
 {
-
-    private HealthComponent healthComponent;
+    public HealthComponent healthComponent { get; private set; }
     private CharacterController characterController;
 
     [Header("Character")]

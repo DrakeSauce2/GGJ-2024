@@ -9,9 +9,16 @@ public class HealthComponent : MonoBehaviour
 
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
+    [Space]
+    [SerializeField] private float invulnerableDuration;
 
     public delegate void OnDamageTaken(GameObject instigator, int damage);
+    public delegate void OnDeath();
+
     public OnDamageTaken onDamageTaken;
+    public OnDeath onDeath;
+
+    private bool isDamagable = true;
 
     private void Awake()
     {
@@ -26,12 +33,26 @@ public class HealthComponent : MonoBehaviour
     private void TakeDamage(GameObject instigator, int damage)
     {
         if (Owner == instigator) return;
+        if (!isDamagable) return;
+
+        Debug.Log("Damage Taken");
 
         health -= damage;
+        StartCoroutine(InvulnerabeCoroutine());
+
         if (health <= 0)
         {
-            // Start Death
+            onDeath?.Invoke();
         }
-
     }
+
+    private IEnumerator InvulnerabeCoroutine()
+    {
+        isDamagable = false;
+
+        yield return new WaitForSeconds(invulnerableDuration);
+
+        isDamagable = true;
+    }
+
 }

@@ -10,11 +10,13 @@ public class Player : Character
     public static Player Instance;
 
     private PlayerInputActions playerInputActions;
+    private Damager damager;
 
     [Header("Attack LayerMask")]
     [SerializeField] private LayerMask attackMask;
 
-    bool isAttacking = false;   
+    bool isAttacking = false;
+    bool isDead = false;
 
     private void Awake()
     {
@@ -23,16 +25,23 @@ public class Player : Character
 
         Init(gameObject);
 
+        damager = GetComponent<Damager>();
+
         playerInputActions = new PlayerInputActions();
 
         playerInputActions.Enable();
         playerInputActions.Main.Attack.performed += ProcessAttack;
+        healthComponent.onDeath += StartDeath;
+    }
 
+    private void StartDeath()
+    {
+        isDead = true;
     }
 
     private void FixedUpdate()
     {
-        if (isAttacking) return;
+        if (isAttacking || isDead) return;
 
         PlayerMove();
     }
@@ -48,7 +57,7 @@ public class Player : Character
 
     private void ProcessAttack(InputAction.CallbackContext context)
     {
-        if (isAttacking) return;
+        if (isAttacking || isDead) return;
 
         Vector2 mousePosition = playerInputActions.Main.MousePosition.ReadValue<Vector2>();
         Ray ray = Camera.main.ScreenPointToRay(mousePosition);
@@ -67,6 +76,8 @@ public class Player : Character
         //Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
 
         //transform.rotation = targetRotation;
+
+        damager.StartDamage(1f);
 
         yield return new WaitForSeconds(0.7f);
 

@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,19 +8,32 @@ using UnityEngine.AI;
 public class Enemy : Character
 {
     NavMeshAgent agent;
+    private Damager damager;
 
     bool isAttacking = false;
+    bool isDead = false;
 
     private void Awake()
     {
         Init(gameObject);
 
+        damager = GetComponent<Damager>();
         agent = GetComponent<NavMeshAgent>();
+
+        healthComponent.onDeath += StartDeath;
+    }
+
+    private void StartDeath()
+    {
+        isDead = true;
+
+        Destroy(gameObject);
+
     }
 
     private void FixedUpdate()
     {
-        if (isAttacking) return;
+        if (isAttacking || isDead) return;
 
         float distanceFromPlayer = Vector3.Distance(transform.position, Player.Instance.transform.position);
 
@@ -42,6 +55,7 @@ public class Enemy : Character
 
         // Attack Stuff and animation here
         Debug.Log("Enemy Attacking!");
+        damager.StartDamage(1f);
 
         yield return new WaitForSeconds(1.5f); // Arbitrary time until animations are implemented
         isAttacking = false;
