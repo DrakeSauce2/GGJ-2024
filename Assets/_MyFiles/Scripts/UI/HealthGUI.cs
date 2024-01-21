@@ -16,7 +16,7 @@ public class HealthGUI : MonoBehaviour
         healthComponent.onHealthChanged += UpdateGUI;
     }
 
-    private void UpdateGUI(GameObject instigator, int damage, int health, int maxHealth)
+    private void UpdateGUI(GameObject instigator, int health, int maxHealth)
     {
         for (int i = 0; i < maxHealth; i++)
         {

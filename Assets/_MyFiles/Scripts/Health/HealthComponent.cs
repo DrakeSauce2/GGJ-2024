@@ -7,10 +7,7 @@ public class HealthComponent : MonoBehaviour
 {
     public GameObject Owner { get; private set; }
 
-    [Space]
-    [SerializeField] private float invulnerableDuration;
-
-    public delegate void OnHealthChanged(GameObject instigator, int damage, int health, int maxHealth);
+    public delegate void OnHealthChanged(GameObject instigator, int health, int maxHealth);
     public delegate void OnDeath();
 
     public OnHealthChanged onHealthChanged;
@@ -20,7 +17,7 @@ public class HealthComponent : MonoBehaviour
 
     private void Awake()
     {
-        onHealthChanged += TakeDamage;
+        onHealthChanged += HealthChanged;
     }
 
     public void Init(GameObject owner)
@@ -28,27 +25,12 @@ public class HealthComponent : MonoBehaviour
         Owner = owner;
     }
 
-    private void TakeDamage(GameObject instigator, int damage, int health, int maxHealth)
+    private void HealthChanged(GameObject instigator, int health, int maxHealth)
     {
-        if (Owner == instigator) return;
-        if (!isDamagable) return;
-
-        Debug.Log("Damage Taken");
-        StartCoroutine(InvulnerabeCoroutine());
-
         if (health <= 0)
         {
             onDeath?.Invoke();
         }
-    }
-
-    private IEnumerator InvulnerabeCoroutine()
-    {
-        isDamagable = false;
-
-        yield return new WaitForSeconds(invulnerableDuration);
-
-        isDamagable = true;
     }
 
 }

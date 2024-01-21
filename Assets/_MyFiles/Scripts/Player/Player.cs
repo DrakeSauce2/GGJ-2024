@@ -40,6 +40,9 @@ public class Player : Character
     private void StartDeath()
     {
         isDead = true;
+
+
+
     }
 
     private void FixedUpdate()

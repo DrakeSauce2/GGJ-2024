@@ -6,10 +6,11 @@ public class Damager : MonoBehaviour
 {
     [SerializeField] DamageTrigger trigger;
     [SerializeField] int damage;
+    [SerializeField] int team;
 
     private void Awake()
     {
-        trigger.Init(gameObject, damage);
+        trigger.Init(gameObject, damage, team);
     }
     
     public void StartDamage(float triggerDuration)

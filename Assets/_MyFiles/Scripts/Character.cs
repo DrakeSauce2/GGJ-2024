@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
 public class Character : MonoBehaviour
@@ -15,9 +13,15 @@ public class Character : MonoBehaviour
     [Space]
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
+    [Space]
+    [SerializeField] private float invulnerableDuration;
+    [Header("Team")]
+    [SerializeField] private int teamIndex;
 
     public float MovementSpeed { get { return movementSpeed; } }
-    public float RotateSpeed { get { return rotateSpeed; } }    
+    public float RotateSpeed { get { return rotateSpeed; } }
+
+    private bool isDamagable = true;
 
     public void Init(GameObject owner)
     {
@@ -35,9 +39,36 @@ public class Character : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.fixedDeltaTime);
     }
 
-    public void TakeDamage(GameObject instigator, int damage)
+    public void TakeDamage(GameObject instigator, int damage, int team)
     {
+        if (!isDamagable) return;
+        if (instigator == gameObject) return;
+        if (teamIndex == team) return;
+
         health -= damage;
-        healthComponent.onHealthChanged?.Invoke(instigator, damage, health, maxHealth);
+        healthComponent.onHealthChanged?.Invoke(instigator, health, maxHealth);
+
+        StartCoroutine(InvulnerabeCoroutine());
+
+
     }
+
+    public void Heal(int healAmount)
+    {
+        health += healAmount;
+
+        if(health >= maxHealth) health = maxHealth;
+
+        healthComponent.onHealthChanged?.Invoke(null, health, maxHealth);
+    }
+
+    private IEnumerator InvulnerabeCoroutine()
+    {
+        isDamagable = false;
+
+        yield return new WaitForSeconds(invulnerableDuration);
+
+        isDamagable = true;
+    }
+
 }

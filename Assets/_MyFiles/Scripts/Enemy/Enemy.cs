@@ -4,11 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : Character
 {
     NavMeshAgent agent;
     private Damager damager;
+
+    [SerializeField] float deathForce = 110f;
+
+
+    Coroutine attackCoroutine;
+    Coroutine stunCoroutine;
+
 
     bool isAttacking = false;
     bool isDead = false;
@@ -20,20 +26,25 @@ public class Enemy : Character
 
         damager = GetComponent<Damager>();
         agent = GetComponent<NavMeshAgent>();
+ 
+        agent.speed = UnityEngine.Random.Range(agent.speed - 2f, agent.speed);
 
         healthComponent.onDeath += StartDeath;
         healthComponent.onHealthChanged += DamageTaken;
     }
 
-    private void DamageTaken(GameObject instigator, int damage, int health, int maxHealth)
+    private void DamageTaken(GameObject instigator, int health, int maxHealth)
     {
-        StartCoroutine(StunCoroutine());
+        stunCoroutine = StartCoroutine(StunCoroutine());
     }
 
     private IEnumerator StunCoroutine()
     {
         isStunned = true;
         agent.SetDestination(transform.position);
+
+        if (attackCoroutine != null)
+            StopCoroutine(attackCoroutine);
 
         yield return new WaitForSeconds(1.3f);
 
@@ -45,19 +56,29 @@ public class Enemy : Character
     {
         isDead = true;
 
-        Destroy(gameObject);
+        StopAllCoroutines();
+
+        agent.SetDestination(transform.position);
+
+        Destroy(agent);
+        Rigidbody rbody = gameObject.AddComponent<Rigidbody>();
+        rbody.AddForce(-transform.forward * deathForce);
+
+        gameObject.layer = 7;
+
+        Destroy(gameObject, 2);
 
     }
 
     private void FixedUpdate()
     {
-        if (isAttacking || isDead) return;
+        if (isAttacking || isDead || isStunned) return;
 
         float distanceFromPlayer = Vector3.Distance(transform.position, Player.Instance.transform.position);
 
         if (distanceFromPlayer <= agent.stoppingDistance)
         {
-            StartCoroutine(AttackCoroutine());
+            attackCoroutine = StartCoroutine(AttackCoroutine());
         }
         else
         {

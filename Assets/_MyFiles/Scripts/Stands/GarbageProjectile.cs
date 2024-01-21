@@ -2,13 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum GarbageType
+{
+    GOOD,
+    BAD,
+}
+
 public class GarbageProjectile : MonoBehaviour
 {
+    [SerializeField] GarbageType type;
+
+    private Damager damager;
+
     Vector3 startingPosition;
     Vector3 lastKnownPlayerPosition;
 
     private void Start()
     {
+        damager = GetComponent<Damager>();
+
         startingPosition = transform.position;
         lastKnownPlayerPosition = Player.Instance.transform.position;
 
@@ -58,6 +70,15 @@ public class GarbageProjectile : MonoBehaviour
 
             t += Time.deltaTime;
             yield return null;
+        }
+
+        if (type == GarbageType.BAD)
+        {
+            damager.StartDamage(0.5f);
+
+            GetComponent<MeshFilter>().mesh = null;
+
+            Destroy(gameObject, 1f);
         }
 
     }
