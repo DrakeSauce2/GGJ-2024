@@ -77,9 +77,9 @@ public class Player : Character
 
         //transform.rotation = targetRotation;
 
-        damager.StartDamage(1f);
+        damager.StartDamage(0.5f);
 
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.3f);
 
         isAttacking = false;
     }

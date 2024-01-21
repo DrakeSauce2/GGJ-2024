@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
     {
         for (int i = spawnAmount; i > 0; i--)
         {
-            GameManager.Instance.AddInstanceToSpawnList(Instantiate(GetRandObjectInList(), transform));
+            GameManager.Instance.AddInstanceToSpawnList(Instantiate(GetRandObjectInList(), transform.position, Quaternion.identity));
         }
     }
 

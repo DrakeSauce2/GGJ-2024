@@ -12,6 +12,7 @@ public class Enemy : Character
 
     bool isAttacking = false;
     bool isDead = false;
+    bool isStunned = false;
 
     private void Awake()
     {
@@ -21,6 +22,23 @@ public class Enemy : Character
         agent = GetComponent<NavMeshAgent>();
 
         healthComponent.onDeath += StartDeath;
+        healthComponent.onDamageTaken += DamageTaken;
+    }
+
+    private void DamageTaken(GameObject instigator, int damage)
+    {
+        StartCoroutine(StunCoroutine());
+    }
+
+    private IEnumerator StunCoroutine()
+    {
+        isStunned = true;
+        agent.SetDestination(transform.position);
+
+        yield return new WaitForSeconds(1.3f);
+
+        isStunned = false;
+        agent.SetDestination(Player.Instance.transform.position);
     }
 
     private void StartDeath()
