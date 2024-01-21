@@ -11,6 +11,8 @@ public class Player : Character
 
     private PlayerInputActions playerInputActions;
     private Damager damager;
+    
+    [SerializeField] HealthGUI healthGUI;
 
     [Header("Attack LayerMask")]
     [SerializeField] private LayerMask attackMask;
@@ -24,6 +26,7 @@ public class Player : Character
         else Destroy(this);
 
         Init(gameObject);
+        healthGUI.Init(healthComponent);
 
         damager = GetComponent<Damager>();
 

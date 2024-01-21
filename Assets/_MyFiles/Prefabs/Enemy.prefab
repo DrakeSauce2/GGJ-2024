@@ -159,6 +159,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   rotateSpeed: 15
+  health: 3
+  maxHealth: 3
 --- !u!114 &295220632386186053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,8 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf89e8502bd3344b8fc367a10a447a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  maxHealth: 5
   invulnerableDuration: 0.5
 --- !u!114 &419427268973155453
 MonoBehaviour:

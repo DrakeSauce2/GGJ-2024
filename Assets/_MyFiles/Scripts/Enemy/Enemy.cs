@@ -22,10 +22,10 @@ public class Enemy : Character
         agent = GetComponent<NavMeshAgent>();
 
         healthComponent.onDeath += StartDeath;
-        healthComponent.onDamageTaken += DamageTaken;
+        healthComponent.onHealthChanged += DamageTaken;
     }
 
-    private void DamageTaken(GameObject instigator, int damage)
+    private void DamageTaken(GameObject instigator, int damage, int health, int maxHealth)
     {
         StartCoroutine(StunCoroutine());
     }

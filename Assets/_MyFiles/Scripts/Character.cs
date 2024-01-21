@@ -12,6 +12,9 @@ public class Character : MonoBehaviour
     [Header("Character")]
     [SerializeField] float movementSpeed;
     [SerializeField] float rotateSpeed;
+    [Space]
+    [SerializeField] private int health;
+    [SerializeField] private int maxHealth;
 
     public float MovementSpeed { get { return movementSpeed; } }
     public float RotateSpeed { get { return rotateSpeed; } }    
@@ -34,6 +37,7 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(GameObject instigator, int damage)
     {
-        healthComponent.onDamageTaken?.Invoke(instigator, damage);
+        health -= damage;
+        healthComponent.onHealthChanged?.Invoke(instigator, damage, health, maxHealth);
     }
 }
