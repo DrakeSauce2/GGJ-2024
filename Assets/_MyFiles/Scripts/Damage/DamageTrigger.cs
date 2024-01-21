@@ -18,9 +18,16 @@ public class DamageTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Character target = other.GetComponent<Character>();
-        if (target == null) return;
+        if (target != null)
+        { 
+            target.TakeDamage(Owner, damage, team);            
+        }
 
-        target.TakeDamage(Owner, damage, team);
+        Enemy enemy = other.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            AudienceEnergy.Instance.GainEnergy();
+        }
 
     }
 }

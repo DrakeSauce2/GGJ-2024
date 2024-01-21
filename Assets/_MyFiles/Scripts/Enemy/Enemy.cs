@@ -56,6 +56,8 @@ public class Enemy : Character
     {
         isDead = true;
 
+        GameManager.Instance.RemoveEnemyFromList(gameObject);
+
         StopAllCoroutines();
 
         agent.SetDestination(transform.position);

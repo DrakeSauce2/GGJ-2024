@@ -15,16 +15,16 @@ public class GarbageProjectile : MonoBehaviour
     private Damager damager;
 
     Vector3 startingPosition;
-    Vector3 lastKnownPlayerPosition;
+    Vector3 targetPosition;
 
     private void Start()
     {
         damager = GetComponent<Damager>();
 
         startingPosition = transform.position;
-        lastKnownPlayerPosition = Player.Instance.transform.position;
+        targetPosition = GetRandomPosition(Player.Instance.transform.position, 5);
 
-        Vector3 direction = lastKnownPlayerPosition - startingPosition;
+        Vector3 direction = targetPosition - startingPosition;
         Vector3 groundDirection = new Vector3(direction.x, 0, direction.z);
         Vector3 targetPos = new Vector3(groundDirection.magnitude, direction.y, 0);
         float height = targetPos.y + targetPos.magnitude / 2f;
@@ -33,6 +33,13 @@ public class GarbageProjectile : MonoBehaviour
 
         CalculatePathWithHeight(targetPos, height, out velocity, out angle, out time);
         StartCoroutine(TrajectoryCoroutine(groundDirection.normalized, velocity, angle, time));
+    }
+
+    private Vector3 GetRandomPosition(Vector3 startingPosition, float max)
+    {
+        return new Vector3(Random.Range(startingPosition.x - max, startingPosition.x + max),
+                           startingPosition.y,
+                           Random.Range(startingPosition.z - max, startingPosition.z + max));
     }
 
     private float QuadraticEquation(float a, float b, float c, float sin)
@@ -72,13 +79,13 @@ public class GarbageProjectile : MonoBehaviour
             yield return null;
         }
 
+        Destroy(gameObject, 5f);
+
         if (type == GarbageType.BAD)
         {
             damager.StartDamage(0.5f);
 
             GetComponent<MeshFilter>().mesh = null;
-
-            Destroy(gameObject, 1f);
         }
 
     }

@@ -8,17 +8,17 @@ public class Spawner : MonoBehaviour
     [SerializeField] List<GameObject> spawnList = new List<GameObject>();
     [SerializeField, Range(1, 5)] int spawnAmount = 1;
 
-    private void Start()
-    {
-        Spawn();
-    }
-
     public void Spawn()
     {
         for (int i = spawnAmount; i > 0; i--)
         {
-            GameManager.Instance.AddInstanceToSpawnList(Instantiate(GetRandObjectInList(), transform.position, Quaternion.identity));
+            Instantiate(GetRandObjectInList(), transform.position, Quaternion.identity);
         }
+    }
+
+    public void RemoteManualSpawn(GameObject selectedObjSpawn)
+    {
+        Instantiate(selectedObjSpawn, transform.position, Quaternion.identity);
     }
 
     private GameObject GetRandObjectInList()

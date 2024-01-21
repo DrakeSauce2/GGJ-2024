@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [SerializeField] List<GameObject> instancedSpawns = new List<GameObject>();
+    [SerializeField] TimedSpawner enemySpawner;
 
     private void Awake()
     {
@@ -14,15 +15,22 @@ public class GameManager : MonoBehaviour
         else Destroy(this);
     }
 
-    public void AddInstanceToSpawnList(GameObject objToAdd)
+    private void LateUpdate()
     {
-        instancedSpawns.Add(objToAdd);
+        if (instancedSpawns.Count == 0)
+        {
+            enemySpawner.ForceSpawn();
+        }
     }
 
-    public void RemoveSpawnedInstanced(GameObject objToRemove)
+    public void AddEnemyToList(GameObject EnemyToAdd)
     {
-        instancedSpawns.Remove(objToRemove);
-        Destroy(objToRemove);
+        instancedSpawns.Add(EnemyToAdd);
+    }
+
+    public void RemoveEnemyFromList(GameObject EnemyToRemove)
+    {
+        instancedSpawns.Remove(EnemyToRemove);
     }
 
 }

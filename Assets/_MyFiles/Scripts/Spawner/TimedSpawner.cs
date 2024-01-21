@@ -8,6 +8,7 @@ public class TimedSpawner : MonoBehaviour
     [SerializeField] List<GameObject> spawnList = new List<GameObject>();
     [SerializeField, Range(1, 5)] int spawnAmount = 1;
     [SerializeField] float spawnDelay = 1f;
+    private float currentDelay = 0;
 
     private void Start()
     {
@@ -24,11 +25,21 @@ public class TimedSpawner : MonoBehaviour
     {
         for (int i = spawnAmount; i > 0; i--)
         {
-            GameManager.Instance.AddInstanceToSpawnList(Instantiate(GetRandObjectInList(), transform.position, Quaternion.identity));
+            GameManager.Instance.AddEnemyToList(Instantiate(GetRandObjectInList(), transform.position, Quaternion.identity));
         }
-        yield return new WaitForSeconds(spawnDelay);
+        currentDelay = spawnDelay;
+        while (currentDelay > 0)
+        {
+            currentDelay -= Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
 
         StartCoroutine(SpawnCoroutine());
+    }
+
+    public void ForceSpawn()
+    {
+        currentDelay = 0;
     }
 
 }
