@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [Header("Player")]
+    [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private Transform playerSpawnPoint;
+    [Header("Enemy")]
     [SerializeField] List<GameObject> instancedSpawns = new List<GameObject>();
     [SerializeField] TimedSpawner enemySpawner;
 
@@ -13,6 +17,10 @@ public class GameManager : MonoBehaviour
     {
         if(Instance == null) Instance = this;
         else Destroy(this);
+
+        Time.timeScale = 1.0f;
+
+        Instantiate(playerPrefab, playerSpawnPoint.position, Quaternion.identity);
     }
 
     private void LateUpdate()

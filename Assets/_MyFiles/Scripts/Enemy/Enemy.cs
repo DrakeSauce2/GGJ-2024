@@ -29,6 +29,8 @@ public class Enemy : Character
  
         agent.speed = UnityEngine.Random.Range(agent.speed - 2f, agent.speed);
 
+        healthComponent.onDeath -= StartDeath;
+        healthComponent.onHealthChanged -= DamageTaken;
         healthComponent.onDeath += StartDeath;
         healthComponent.onHealthChanged += DamageTaken;
     }
@@ -40,6 +42,8 @@ public class Enemy : Character
 
     private IEnumerator StunCoroutine()
     {
+        if (agent == null) yield return null;
+
         isStunned = true;
         agent.SetDestination(transform.position);
 
@@ -60,15 +64,17 @@ public class Enemy : Character
 
         StopAllCoroutines();
 
-        agent.SetDestination(transform.position);
-
         Destroy(agent);
+
         Rigidbody rbody = gameObject.AddComponent<Rigidbody>();
-        rbody.AddForce(-transform.forward * deathForce);
+        if(rbody != null)
+        {
+            rbody.AddForce(-transform.forward * deathForce);
+        }
 
         gameObject.layer = 7;
 
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 3);
 
     }
 
@@ -92,6 +98,8 @@ public class Enemy : Character
 
     public IEnumerator AttackCoroutine()
     {
+        if (agent == null) yield return null;
+
         isAttacking = true;
 
         // Attack Stuff and animation here

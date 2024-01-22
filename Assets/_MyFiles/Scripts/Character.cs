@@ -17,11 +17,12 @@ public class Character : MonoBehaviour
     [SerializeField] private float invulnerableDuration;
     [Header("Team")]
     [SerializeField] private int teamIndex;
+    public int Team { get { return teamIndex; } }
 
     public float MovementSpeed { get { return movementSpeed; } }
     public float RotateSpeed { get { return rotateSpeed; } }
 
-    private bool isDamagable = true;
+    [SerializeField] private bool isDamagable = true;
 
     public void Init(GameObject owner)
     {
@@ -42,7 +43,6 @@ public class Character : MonoBehaviour
     public void TakeDamage(GameObject instigator, int damage, int team)
     {
         if (!isDamagable) return;
-        if (instigator == gameObject) return;
         if (teamIndex == team) return;
 
         health -= damage;

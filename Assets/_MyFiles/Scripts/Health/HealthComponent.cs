@@ -13,10 +13,9 @@ public class HealthComponent : MonoBehaviour
     public OnHealthChanged onHealthChanged;
     public OnDeath onDeath;
 
-    private bool isDamagable = true;
-
     private void Awake()
     {
+        onHealthChanged -= HealthChanged;
         onHealthChanged += HealthChanged;
     }
 

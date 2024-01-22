@@ -5,14 +5,23 @@ using UnityEngine;
 
 public class HealthGUI : MonoBehaviour
 {
+    public static HealthGUI Instance;   
+
     [SerializeField] List<GameObject> healthUnits = new List<GameObject>();
 
     private HealthComponent healthComponent;
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(this);
+    }
 
     public void Init(HealthComponent owningHealthComponent)
     {
         healthComponent = owningHealthComponent;
 
+        healthComponent.onHealthChanged -= UpdateGUI;
         healthComponent.onHealthChanged += UpdateGUI;
     }
 

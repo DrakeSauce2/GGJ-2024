@@ -8,6 +8,8 @@ public class Damager : MonoBehaviour
     [SerializeField] int damage;
     [SerializeField] int team;
 
+    Coroutine damageCoroutine = null;
+
     private void Awake()
     {
         trigger.Init(gameObject, damage, team);
@@ -15,7 +17,8 @@ public class Damager : MonoBehaviour
     
     public void StartDamage(float triggerDuration)
     {
-        StartCoroutine(DamageCoroutine(triggerDuration));
+        if (damageCoroutine == null)
+            damageCoroutine = StartCoroutine(DamageCoroutine(triggerDuration));
     }
 
     private IEnumerator DamageCoroutine(float triggerDuration)
@@ -25,6 +28,7 @@ public class Damager : MonoBehaviour
         yield return new WaitForSeconds(triggerDuration);
 
         trigger.gameObject.SetActive(false);
+        damageCoroutine = null;
     }
 
 }

@@ -62,6 +62,15 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""f7a4c592-a7dd-4d7d-91ff-46195439e175"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,17 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5df5ae9e-9e81-4177-af04-d4133b8024b7"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,6 +184,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         m_Main_Attack = m_Main.FindAction("Attack", throwIfNotFound: true);
         m_Main_SecondaryAction = m_Main.FindAction("SecondaryAction", throwIfNotFound: true);
         m_Main_MousePosition = m_Main.FindAction("MousePosition", throwIfNotFound: true);
+        m_Main_Pause = m_Main.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -227,6 +248,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_Main_Attack;
     private readonly InputAction m_Main_SecondaryAction;
     private readonly InputAction m_Main_MousePosition;
+    private readonly InputAction m_Main_Pause;
     public struct MainActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -235,6 +257,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         public InputAction @Attack => m_Wrapper.m_Main_Attack;
         public InputAction @SecondaryAction => m_Wrapper.m_Main_SecondaryAction;
         public InputAction @MousePosition => m_Wrapper.m_Main_MousePosition;
+        public InputAction @Pause => m_Wrapper.m_Main_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -256,6 +279,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @MousePosition.started -= m_Wrapper.m_MainActionsCallbackInterface.OnMousePosition;
                 @MousePosition.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnMousePosition;
                 @MousePosition.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnMousePosition;
+                @Pause.started -= m_Wrapper.m_MainActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_MainActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_MainActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_MainActionsCallbackInterface = instance;
             if (instance != null)
@@ -272,6 +298,9 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 @MousePosition.started += instance.OnMousePosition;
                 @MousePosition.performed += instance.OnMousePosition;
                 @MousePosition.canceled += instance.OnMousePosition;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -282,5 +311,6 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnSecondaryAction(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }

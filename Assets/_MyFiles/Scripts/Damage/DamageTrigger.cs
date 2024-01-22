@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class DamageTrigger : MonoBehaviour
 {
@@ -18,10 +19,10 @@ public class DamageTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Character target = other.GetComponent<Character>();
-        if (target != null)
-        { 
-            target.TakeDamage(Owner, damage, team);            
-        }
+        if (target == null) return;
+
+        Debug.Log(target);
+        target.TakeDamage(Owner, damage, team);
 
         Enemy enemy = other.GetComponent<Enemy>();
         if (enemy != null)
