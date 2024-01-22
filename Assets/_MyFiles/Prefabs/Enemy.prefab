@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6247539345438075636}
   - component: {fileID: 295220632386186053}
   - component: {fileID: 419427268973155453}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,6 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6247539345438075637}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -37,7 +38,6 @@ Transform:
   - {fileID: 8183259442638128266}
   - {fileID: 8540771084799642491}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &6247539345438075633
 CapsuleCollider:
@@ -47,8 +47,17 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6247539345438075637}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -83,9 +92,17 @@ CharacterController:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6247539345438075637}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
@@ -145,6 +162,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6247539345438075634}
     m_Modifications:
     - target: {fileID: 2788262858327006447, guid: b9590351e7004c54886cb059331e28c6,
@@ -210,7 +228,7 @@ PrefabInstance:
     - target: {fileID: 5039783662325248356, guid: b9590351e7004c54886cb059331e28c6,
         type: 3}
       propertyPath: m_Layer
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5039783662325248356, guid: b9590351e7004c54886cb059331e28c6,
         type: 3}
@@ -218,6 +236,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9590351e7004c54886cb059331e28c6, type: 3}
 --- !u!114 &28706483418177094 stripped
 MonoBehaviour:
@@ -242,6 +263,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 6247539345438075634}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e861a40aad9a01341b0d98db906df12d,
@@ -304,7 +326,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monkey_Mojo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e861a40aad9a01341b0d98db906df12d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e861a40aad9a01341b0d98db906df12d, type: 3}
 --- !u!4 &8540771084799642491 stripped
 Transform:

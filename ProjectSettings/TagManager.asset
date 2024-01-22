@@ -3,9 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Enemy
-  - Dead
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -14,12 +12,12 @@ TagManager:
   - Water
   - UI
   - 
-  - Dead
-  - Prop
-  - Player
+  - Ragdoll
+  - 'Player '
   - Enemy
-  - 
   - Pickup
+  - 
+  - 
   - 
   - 
   - 
