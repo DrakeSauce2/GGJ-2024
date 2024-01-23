@@ -13,11 +13,12 @@ public class Tomato : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Destroy(gameObject, 0.1f);
+
         Player player = other.GetComponent<Player>();
         if (player == null) return;
 
         TomatoOverlay.Instance.TomatoThem();
-        Destroy(gameObject);
     }
 
     private IEnumerator AreaEffectDuration()

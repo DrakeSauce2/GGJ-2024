@@ -9,6 +9,7 @@ public class Character : MonoBehaviour
 
     [Header("Character")]
     [SerializeField] float movementSpeed;
+    float currentMovementSpeed;
     [SerializeField] float rotateSpeed;
     [Space]
     [SerializeField] private int health;
@@ -19,7 +20,7 @@ public class Character : MonoBehaviour
     [SerializeField] private int teamIndex;
     public int Team { get { return teamIndex; } }
 
-    public float MovementSpeed { get { return movementSpeed; } }
+    public float MovementSpeed { get { return currentMovementSpeed; } }
     public float RotateSpeed { get { return rotateSpeed; } }
 
     [SerializeField] private bool isDamagable = true;
@@ -30,6 +31,7 @@ public class Character : MonoBehaviour
         healthComponent = GetComponent<HealthComponent>();
         healthComponent.Init(owner);
 
+        currentMovementSpeed = movementSpeed;
     }
 
     public void ProcessMove(Vector3 moveDir)
@@ -60,6 +62,16 @@ public class Character : MonoBehaviour
         if(health >= maxHealth) health = maxHealth;
 
         healthComponent.onHealthChanged?.Invoke(null, health, maxHealth);
+    }
+
+    public IEnumerator ApplySlow(float duration)
+    {
+        currentMovementSpeed = movementSpeed / 2;
+
+        yield return new WaitForSeconds(duration);
+
+        currentMovementSpeed = movementSpeed;
+
     }
 
     private IEnumerator InvulnerabeCoroutine()

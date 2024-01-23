@@ -4,25 +4,34 @@ using UnityEngine;
 
 public enum GarbageType
 {
-    GOOD,
-    BAD,
+    LINGER,
+    IMPACT,
 }
 
 public class GarbageProjectile : MonoBehaviour
 {
     [SerializeField] GarbageType type;
+    [Space]
+    [SerializeField] private float speed = 1f;
+    [Space]
+    [SerializeField] private GameObject trajectoryOutlinePrefab;
+    private GameObject instancedTrajectoryOutline;
+
+    [SerializeField] private float rangeFromPlayer = 3f;
 
     private Damager damager;
 
     Vector3 startingPosition;
     Vector3 targetPosition;
 
+    [SerializeField] private bool doDamage = false;
+
     private void Start()
     {
         damager = GetComponent<Damager>();
 
         startingPosition = transform.position;
-        targetPosition = GetRandomPosition(Player.Instance.transform.position, 5);
+        targetPosition = GetRandomPosition(Player.Instance.transform.position, 3);
 
         Vector3 direction = targetPosition - startingPosition;
         Vector3 groundDirection = new Vector3(direction.x, 0, direction.z);
@@ -33,6 +42,10 @@ public class GarbageProjectile : MonoBehaviour
 
         CalculatePathWithHeight(targetPos, height, out velocity, out angle, out time);
         StartCoroutine(TrajectoryCoroutine(groundDirection.normalized, velocity, angle, time));
+
+        if(trajectoryOutlinePrefab != null)
+            instancedTrajectoryOutline = Instantiate(trajectoryOutlinePrefab, new Vector3(targetPosition.x, 0, targetPosition.z), trajectoryOutlinePrefab.transform.rotation);
+        
     }
 
     private Vector3 GetRandomPosition(Vector3 startingPosition, float max)
@@ -69,25 +82,33 @@ public class GarbageProjectile : MonoBehaviour
     private IEnumerator TrajectoryCoroutine(Vector3 direction, float velocity, float angle, float time)
     {
         float t = 0;
+
+        if(type == GarbageType.IMPACT)
+        Destroy(gameObject, time / speed);
+
         while (t < time)
         {
             float x = velocity * t * Mathf.Cos(angle);
             float y = velocity * t * Mathf.Sin(angle) - (1f/2f) * -Physics.gravity.y * Mathf.Pow(t, 2);
             transform.position = startingPosition + direction * x + Vector3.up * y;
 
-            t += Time.deltaTime;
+            t += (speed * Time.deltaTime);
             yield return null;
         }
 
-        Destroy(gameObject, 5f);
 
-        if (type == GarbageType.BAD)
+        if (doDamage == true)
         {
             damager.StartDamage(0.5f);
 
             GetComponent<MeshFilter>().mesh = null;
         }
+    }
 
+    private void OnDestroy()
+    {
+        if(instancedTrajectoryOutline != null)
+            Destroy(instancedTrajectoryOutline);
     }
 
 }

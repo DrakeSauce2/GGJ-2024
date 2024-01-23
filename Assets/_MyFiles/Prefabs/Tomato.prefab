@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1036696780403401596}
   - component: {fileID: 1478332276543514322}
   - component: {fileID: 2928542998016766819}
+  - component: {fileID: -4593989107667575112}
   m_Layer: 10
   m_Name: Tomato
   m_TagString: Untagged
@@ -57,7 +58,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 1, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1036696780403401596
 MonoBehaviour:
@@ -71,7 +72,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f2ae6837c61d14db49cfa957116980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 1
+  speed: 1.2
+  trajectoryOutlinePrefab: {fileID: 7462895340074329168, guid: 798aaee1af1d6914a8ef0c52687efb43,
+    type: 3}
+  rangeFromPlayer: 1
+  doDamage: 0
 --- !u!114 &1478332276543514322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +106,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 3
+--- !u!114 &-4593989107667575112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027158310402613305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08af8fd56ce98844aa17d1333517241, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7088649620876969216
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +471,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a65e58682c24a5b43acc6d9153978511,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -14,6 +14,7 @@ public class AudienceEnergy : MonoBehaviour
     [SerializeField] private float energy = 50f;
     [SerializeField] private float energyDecayRate = 0.1f;
     [SerializeField] private float energyHitGain = 4f;
+    private int spawnMin = 2, spawnMax = 4;
     private float spawnRate = 4f;
     Coroutine spawnCoroutine = null;
     [Space]
@@ -27,6 +28,13 @@ public class AudienceEnergy : MonoBehaviour
         if(Instance == null) Instance = this;
         else Destroy(this);
 
+        StartCoroutine(StartDelayCoroutine());
+    }
+
+    public IEnumerator StartDelayCoroutine()
+    {
+        yield return new WaitForSeconds(3f);
+
         spawnCoroutine = StartCoroutine(SpawnCoroutine());
     }
 
@@ -37,7 +45,7 @@ public class AudienceEnergy : MonoBehaviour
 
     private IEnumerator SpawnCoroutine()
     {
-        int spawnAmount = Random.Range(1, 3);
+        int spawnAmount = Random.Range(spawnMin, spawnMax);
         for (int i = spawnAmount; i > 0; i--)
         {
             int randSpawner = Random.Range(0, spawners.Count);
@@ -54,24 +62,33 @@ public class AudienceEnergy : MonoBehaviour
         {
             spawnRate = 2f;
             energyDecayRate = 0.5f;
+            spawnMin = 4;
+            spawnMax = 8;
             return badObjects;
         }
         else if(energy < 50 && energy > 20)
         {
             spawnRate = 4f;
             energyDecayRate = 1f;
+            spawnMin = 2;
+            spawnMax = 4;
             return badObjects;
         }
         else if (energy >= 50 && energy < 80)
         {
             spawnRate = 4f;
             energyDecayRate = 5f;
+            spawnMin = 1;
+            spawnMax = 4;
             return goodObjects;
         }
         else
         {
             spawnRate = 2f;
             energyDecayRate = 10f;
+            spawnMin = 4;
+            spawnMax = 8;
+
             return goodObjects;
         }
 

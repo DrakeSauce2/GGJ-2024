@@ -30,8 +30,11 @@ public class CameraManager : MonoBehaviour
             followTarget = Player.Instance.transform;
             return;
         }
+
         Vector3 camInterpPosition = new Vector3(followTarget.position.x, camHeight, armLength);
         _camTransform.position = Vector3.SmoothDamp(_camTransform.position, camInterpPosition, ref refVelocity, followSpeed);
+
+
 
         if(lookAt == true)
         {
@@ -46,5 +49,7 @@ public class CameraManager : MonoBehaviour
         }
 
     }
+
+
 
 }

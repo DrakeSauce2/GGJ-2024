@@ -118,7 +118,7 @@ MonoBehaviour:
   healthGUI: {fileID: 0}
   attackMask:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 1971
 --- !u!114 &7510875403540623649
 MonoBehaviour:
   m_ObjectHideFlags: 0
