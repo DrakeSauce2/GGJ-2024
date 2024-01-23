@@ -31,7 +31,7 @@ public class GarbageProjectile : MonoBehaviour
         damager = GetComponent<Damager>();
 
         startingPosition = transform.position;
-        targetPosition = GetRandomPosition(Player.Instance.transform.position, 3);
+        targetPosition = GetRandomPosition(Player.Instance.transform.position, rangeFromPlayer);
 
         Vector3 direction = targetPosition - startingPosition;
         Vector3 groundDirection = new Vector3(direction.x, 0, direction.z);

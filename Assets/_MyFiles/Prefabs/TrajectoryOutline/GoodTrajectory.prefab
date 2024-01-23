@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 874283108938549630}
   - component: {fileID: -4612516653259825321}
   m_Layer: 0
-  m_Name: TrajectoryPosition
+  m_Name: GoodTrajectory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 237cfc44dec129b469bdc192094fa076, type: 2}
+  - {fileID: 2100000, guid: da2d3a19db46dcf49b01ee3646c55761, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

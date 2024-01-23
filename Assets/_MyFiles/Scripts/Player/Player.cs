@@ -47,7 +47,7 @@ public class Player : Character
     {
         isDead = true;
 
-
+        LoseScreen.Instance.Lose();
 
     }
 

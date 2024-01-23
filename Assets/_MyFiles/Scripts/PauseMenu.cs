@@ -21,7 +21,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        if (pauseCooldown) return;
+        if (pauseCooldown || LoseScreen.Instance.gameOver == true) return;
 
         StartCoroutine(PauseCoroutine());
     }

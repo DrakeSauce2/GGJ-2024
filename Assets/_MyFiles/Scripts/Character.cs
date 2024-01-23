@@ -36,7 +36,7 @@ public class Character : MonoBehaviour
 
     public void ProcessMove(Vector3 moveDir)
     {
-        characterController.Move(moveDir * Time.fixedDeltaTime * movementSpeed);
+        characterController.Move(moveDir.normalized * Time.fixedDeltaTime * movementSpeed);
 
         Quaternion targetRotation = Quaternion.LookRotation(moveDir, transform.up);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.fixedDeltaTime);

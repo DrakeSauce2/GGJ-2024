@@ -74,7 +74,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   speed: 1
-  trajectoryOutlinePrefab: {fileID: 0}
+  trajectoryOutlinePrefab: {fileID: 7462895340074329168, guid: 000a3ff164c2bd94690d10fd00a3ee26,
+    type: 3}
   rangeFromPlayer: 3
   doDamage: 0
 --- !u!114 &1478332276543514322
