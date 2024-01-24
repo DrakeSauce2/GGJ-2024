@@ -14,6 +14,9 @@ public class Character : MonoBehaviour
     [Space]
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
+    public int Health { get { return health; } protected set { health = value; } }
+    public int MaxHealth { get { return maxHealth; } protected set { maxHealth = value; } }
+
     [Space]
     [SerializeField] private float invulnerableDuration;
     [Header("Team")]
@@ -29,7 +32,9 @@ public class Character : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         healthComponent = GetComponent<HealthComponent>();
-        healthComponent.Init(owner);
+
+        if(healthComponent)
+            healthComponent.Init(owner);
 
         currentMovementSpeed = movementSpeed;
     }
@@ -42,7 +47,7 @@ public class Character : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotateSpeed * Time.fixedDeltaTime);
     }
 
-    public void TakeDamage(GameObject instigator, int damage, int team)
+    public virtual void TakeDamage(GameObject instigator, int damage, int team)
     {
         if (!isDamagable) return;
         if (teamIndex == team) return;

@@ -25,6 +25,7 @@ public class Player : Character
         else Destroy(Instance);
 
         Init(gameObject);
+        
         healthGUI = HealthGUI.Instance;
         healthGUI.Init(healthComponent);
 
@@ -47,8 +48,15 @@ public class Player : Character
     {
         isDead = true;
 
-        LoseScreen.Instance.Lose();
+        StartCoroutine(DeathCoroutine());
 
+    }
+
+    private IEnumerator DeathCoroutine()
+    {
+        yield return new WaitForSeconds(3f);
+
+        LoseScreen.Instance.Lose();
     }
 
     private void FixedUpdate()

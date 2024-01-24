@@ -5,14 +5,36 @@ using UnityEngine;
 public class TimedSpawner : MonoBehaviour
 {
     [Header("Base Spawner")]
+    [SerializeField] bool startOnAwake = false;
     [SerializeField] List<GameObject> spawnList = new List<GameObject>();
-    [SerializeField, Range(1, 5)] int spawnAmount = 1;
+    [SerializeField, Range(0, 5)] int spawnAmount = 1;
     [SerializeField] float spawnDelay = 1f;
     private float currentDelay = 0;
+    [Space]
+    [SerializeField] int minSpawn = 1, maxSpawn = 3;
+
+    Coroutine spawnCoroutine = null;
 
     private void Start()
     {
-        StartCoroutine(SpawnCoroutine());
+        if (startOnAwake == true) 
+            StartSpawnCycle();
+    }
+
+    public void StopSpawnCycle()
+    {
+        StopCoroutine(spawnCoroutine);
+    }
+
+    public void StartSpawnCycle()
+    {
+        spawnCoroutine = StartCoroutine(SpawnCoroutine());
+    }
+
+    public void SetSpawnAmountRange(int min, int max)
+    {
+        minSpawn = min;
+        maxSpawn = max;
     }
 
     private GameObject GetRandObjectInList()
@@ -34,7 +56,9 @@ public class TimedSpawner : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        StartCoroutine(SpawnCoroutine());
+        spawnAmount = Random.Range(minSpawn, maxSpawn);
+
+        spawnCoroutine = StartCoroutine(SpawnCoroutine());
     }
 
     public void ForceSpawn()

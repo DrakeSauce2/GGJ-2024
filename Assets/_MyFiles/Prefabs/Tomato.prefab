@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  speed: 1.2
+  speed: 2
   trajectoryOutlinePrefab: {fileID: 7462895340074329168, guid: 798aaee1af1d6914a8ef0c52687efb43,
     type: 3}
   rangeFromPlayer: 1

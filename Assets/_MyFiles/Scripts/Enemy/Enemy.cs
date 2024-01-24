@@ -9,8 +9,7 @@ public class Enemy : Character
     NavMeshAgent agent;
     private Damager damager;
 
-    [SerializeField] float deathForce = 110f;
-
+    [SerializeField] RagdollEnabler ragdoll;
 
     Coroutine attackCoroutine;
     Coroutine stunCoroutine;
@@ -66,11 +65,8 @@ public class Enemy : Character
 
         Destroy(agent);
 
-        Rigidbody rbody = gameObject.AddComponent<Rigidbody>();
-        if(rbody != null)
-        {
-            rbody.AddForce(-transform.forward * deathForce);
-        }
+        ragdoll.EnableRagdoll();
+        ragdoll.ApplyForce();
 
         gameObject.layer = 7;
 

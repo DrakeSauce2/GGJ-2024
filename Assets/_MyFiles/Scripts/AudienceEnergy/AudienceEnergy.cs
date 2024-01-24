@@ -21,6 +21,9 @@ public class AudienceEnergy : MonoBehaviour
     [SerializeField] private float energyDecayStallTimeGain = 0.3f;
     [SerializeField] private float totalStallTime = 0f;
     [SerializeField] bool isStalled = false;
+
+    private bool overrideEnergyMeter = false;
+
     Coroutine energyStallCoroutine = null;
 
     private void Awake()
@@ -43,6 +46,16 @@ public class AudienceEnergy : MonoBehaviour
         EnergyDecay();
     }
 
+    public void StopSpawningCycle()
+    {
+        StopCoroutine(spawnCoroutine);
+    }
+
+    public void StartSpawnCoroutine()
+    {
+        spawnCoroutine = StartCoroutine(SpawnCoroutine());
+    }
+
     private IEnumerator SpawnCoroutine()
     {
         int spawnAmount = Random.Range(spawnMin, spawnMax);
@@ -57,7 +70,17 @@ public class AudienceEnergy : MonoBehaviour
     }
 
     private List<GameObject> GetListBasedOnEnergyCurrent()
-    {       
+    {
+        if (overrideEnergyMeter == true)
+        {
+            spawnRate = .6f;
+            energyDecayRate = 0f;
+            spawnMin = 4;
+            spawnMax = 6;
+            return badObjects;
+        }
+
+
         if (energy < 20)
         {
             spawnRate = 2f;
@@ -92,6 +115,11 @@ public class AudienceEnergy : MonoBehaviour
             return goodObjects;
         }
 
+    }
+
+    public void SetOverrideEnergyMeter(bool state)
+    {
+        overrideEnergyMeter = state;
     }
 
     private GameObject GetRandObjectInList(List<GameObject> spawnList)

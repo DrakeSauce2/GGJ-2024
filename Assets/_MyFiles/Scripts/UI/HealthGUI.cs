@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HealthGUI : MonoBehaviour
 {
-    public static HealthGUI Instance;   
+    public static HealthGUI Instance { get; private set; }   
 
     [SerializeField] List<GameObject> healthUnits = new List<GameObject>();
 

@@ -31,7 +31,7 @@ public class CameraManager : MonoBehaviour
             return;
         }
 
-        Vector3 camInterpPosition = new Vector3(followTarget.position.x, camHeight, armLength);
+        Vector3 camInterpPosition = new Vector3(_camTransform.position.x, camHeight, armLength);
         _camTransform.position = Vector3.SmoothDamp(_camTransform.position, camInterpPosition, ref refVelocity, followSpeed);
 
 

@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1036696780403401596}
   - component: {fileID: 1478332276543514322}
   - component: {fileID: 543495975435054076}
-  - component: {fileID: -5068050793305686561}
   m_Layer: 10
   m_Name: Projectile_GOOD
   m_TagString: Untagged
@@ -73,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  speed: 1
+  speed: 1.5
   trajectoryOutlinePrefab: {fileID: 7462895340074329168, guid: 000a3ff164c2bd94690d10fd00a3ee26,
     type: 3}
   rangeFromPlayer: 3
@@ -106,18 +105,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healAmount: 1
---- !u!114 &-5068050793305686561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027158310402613305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c08af8fd56ce98844aa17d1333517241, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7088649620876969216
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,17 +377,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c04ac38310047914db69679cb354bc8e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.6452
+      value: 3.305171
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c04ac38310047914db69679cb354bc8e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.6452
+      value: 3.305171
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c04ac38310047914db69679cb354bc8e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.6452
+      value: 3.305171
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c04ac38310047914db69679cb354bc8e,
         type: 3}
@@ -410,12 +397,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c04ac38310047914db69679cb354bc8e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.041267
+      value: 0.040676
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c04ac38310047914db69679cb354bc8e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.000000020101
+      value: -0.000000040385
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c04ac38310047914db69679cb354bc8e,
         type: 3}

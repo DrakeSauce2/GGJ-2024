@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LoseScreen : MonoBehaviour
 {
@@ -23,8 +24,19 @@ public class LoseScreen : MonoBehaviour
     {
         gameOver = true;
 
+        Time.timeScale = 0f;      
         mainGUI.SetActive(false);
         loseScreen.SetActive(true);
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 }
