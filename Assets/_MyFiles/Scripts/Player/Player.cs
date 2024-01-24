@@ -16,6 +16,11 @@ public class Player : Character
     [Header("Attack LayerMask")]
     [SerializeField] private LayerMask attackMask;
 
+    [Header("Hat")]
+    [SerializeField] private GameObject headObj;
+    [SerializeField] private Transform headPoint;
+    public Transform HeadPoint { get { return headPoint; } }
+
     bool isAttacking = false;
     bool isDead = false;
 

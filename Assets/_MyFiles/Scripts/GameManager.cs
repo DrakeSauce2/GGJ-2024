@@ -27,6 +27,13 @@ public class GameManager : MonoBehaviour
         Instantiate(playerPrefab, playerSpawnPoint.position, Quaternion.identity);
     }
 
+    public void StartEnemySpawnCycle()
+    {
+        foreach (TimedSpawner spawner in enemySpawner)
+        {
+            spawner.StartSpawnCycle();
+        }
+    }
     public void StopEnemySpawnCycle()
     {
         foreach (TimedSpawner spawner in enemySpawner)
@@ -37,6 +44,8 @@ public class GameManager : MonoBehaviour
 
     public void KillAllInstancedSpawns()
     {
+        if (instancedSpawns.Count <= 0) return;
+
         foreach (GameObject objectToKill in instancedSpawns)
         {
             Destroy(objectToKill);
@@ -60,7 +69,10 @@ public class GameManager : MonoBehaviour
 
     public void RemoveEnemyFromList(GameObject EnemyToRemove)
     {
-        instancedSpawns.Remove(EnemyToRemove);
+        if (instancedSpawns.Contains(EnemyToRemove))
+        {
+            instancedSpawns.Remove(EnemyToRemove);
+        }
     }
 
     private IEnumerator StartForceSpawn()
@@ -73,7 +85,7 @@ public class GameManager : MonoBehaviour
         {
             int randSpawner = Random.Range(0, enemySpawner.Count);
 
-            enemySpawner[randSpawner].ForceSpawn();
+            enemySpawner[randSpawner].InstantDelay();
         }
 
         forceSpawnStarted = false;
@@ -81,11 +93,20 @@ public class GameManager : MonoBehaviour
 
     public void InstantForceSpawn()
     {
-        for (int i = 0; i < Random.Range(minSpawnersToUse, maxSpawnersToUse); i++)
+        for (int i = Random.Range(minSpawnersToUse, maxSpawnersToUse); i > 0; i--)
         {
             int randSpawner = Random.Range(0, enemySpawner.Count);
 
             enemySpawner[randSpawner].ForceSpawn();
+        }
+    }
+    public void InstantDelay()
+    {
+        for (int i = 0; i < Random.Range(minSpawnersToUse, maxSpawnersToUse); i++)
+        {
+            int randSpawner = Random.Range(0, enemySpawner.Count);
+
+            enemySpawner[randSpawner].InstantDelay();
         }
     }
 

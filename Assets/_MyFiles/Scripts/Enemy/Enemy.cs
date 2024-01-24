@@ -6,17 +6,17 @@ using UnityEngine.AI;
 
 public class Enemy : Character
 {
-    NavMeshAgent agent;
+    protected NavMeshAgent agent;
     private Damager damager;
 
-    [SerializeField] RagdollEnabler ragdoll;
+    [SerializeField] protected RagdollEnabler ragdoll;
 
     Coroutine attackCoroutine;
     Coroutine stunCoroutine;
 
 
     bool isAttacking = false;
-    bool isDead = false;
+    protected bool isDead = false;
     bool isStunned = false;
 
     private void Awake()
@@ -44,7 +44,9 @@ public class Enemy : Character
         if (agent == null) yield return null;
 
         isStunned = true;
-        agent.SetDestination(transform.position);
+
+        if (agent != null)
+            agent.SetDestination(transform.position);
 
         if (attackCoroutine != null)
             StopCoroutine(attackCoroutine);
@@ -52,10 +54,12 @@ public class Enemy : Character
         yield return new WaitForSeconds(1.3f);
 
         isStunned = false;
-        agent.SetDestination(Player.Instance.transform.position);
+
+        if (agent != null)
+            agent.SetDestination(Player.Instance.transform.position);
     }
 
-    private void StartDeath()
+    public virtual void StartDeath()
     {
         isDead = true;
 

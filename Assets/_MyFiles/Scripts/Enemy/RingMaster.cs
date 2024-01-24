@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class RingMaster : Character
 {
+    public static RingMaster Instance;
+
     NavMeshAgent agent;
     private Damager damager;
 
@@ -12,7 +14,16 @@ public class RingMaster : Character
     [SerializeField] RingMasterHealthGUI healthGUI;
 
     [Header("Move Point")]
-    [SerializeField] Transform movePoint;
+    [SerializeField] int phaseCount = 0;
+    [SerializeField] Transform[] movePoints;
+    [SerializeField] Transform[] damagePoints;
+
+    [Header("Hats")]
+    [SerializeField] GameObject realHat;
+    [SerializeField] GameObject animHat;
+
+    [Header("Look At Point")]
+    [SerializeField] Transform lookAtPoint;
 
     Coroutine actionCoroutine;
 
@@ -20,55 +31,102 @@ public class RingMaster : Character
     private bool isDead = false;
     [SerializeField] private bool isMoving = false;
 
+    [Header("Damage Phase")]
     [SerializeField] bool damagePhase = false;
+    private int damageDoneInThisPhase = 0;
+
+    [Header("Minion Spawn")]
+    [SerializeField] List<TimedSpawner> spawners = new List<TimedSpawner>();
+    [SerializeField] List<GameObject> instancedMinions = new List<GameObject>();
+
 
     private void Awake()
     {
+        if (Instance == null) Instance = this;
+        else Destroy(this);
+
         Init(gameObject);
 
         damager = GetComponent<Damager>();
         agent = GetComponent<NavMeshAgent>();
 
         healthGUI.Init(Health, MaxHealth);
+        healthComponent.onDeath += StartDeath;
 
-        StartCoroutine(MoveToPoint(movePoint.position));
     }
 
+    private void Start()
+    {
+        StartDamagePhase();
+    }
+    public void RemoveMinionFromList(GameObject minionToRemove)
+    {
+        instancedMinions.Remove(minionToRemove);
+    }
     public override void TakeDamage(GameObject instigator, int damage, int team)
     {
-        if (damagePhase == true) return;
+        if (damagePhase == false) return;
         if (Team == team) return;
 
         Health -= damage;
+        damageDoneInThisPhase += damage;
 
         Debug.Log(Health + " : " + MaxHealth);
 
         healthComponent.onHealthChanged?.Invoke(instigator, Health, MaxHealth);
         healthGUI.onHealthChanged?.Invoke(Health);
+
+        if (damageDoneInThisPhase > 10)
+        {
+            EndOfDamagePhase();
+        }
+
     }
 
+    private void EndOfDamagePhase()
+    {
+        for (int i = Random.Range(1, 5); i > 0; i--)
+        {
+            int randSpawner = Random.Range(0, 4);
+            instancedMinions.AddRange(spawners[randSpawner].Spawn());
+        }
+
+        damagePhase = false;
+        damageDoneInThisPhase = 0;
+
+        StartCoroutine(MoveToPoint(movePoints[phaseCount]));
+
+        phaseCount++;
+    }
     public void StartDamagePhase()
     {
         GameManager.Instance.KillAllInstancedSpawns();
 
-        damagePhase = false;
+        StartCoroutine(MoveToPoint(damagePoints[phaseCount]));
+
+        damagePhase = true;
     }
 
     private void StartDeath()
     {
         isDead = true;
 
+        GameManager.Instance.StopEnemySpawnCycle();
+        GameManager.Instance.KillAllInstancedSpawns();
+        AudienceEnergy.Instance.StopSpawningCycle();
+
+        realHat.SetActive(false);
+        animHat.SetActive(true);
+
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (isAttacking || isDead || isMoving) return;
 
-        if (damagePhase == true)
+        if (instancedMinions.Count <= 0 && damagePhase == false)
         {
-            actionCoroutine = StartCoroutine(AttackCoroutine());
-
-            return;
+            StartDamagePhase();
         }
 
         switch (Random.Range(1, 4)) 
@@ -86,7 +144,7 @@ public class RingMaster : Character
                 actionCoroutine = StartCoroutine(AngerCrowd());
                 break;
             default:
-                Debug.Log("Ringmaster state defualt!");
+                Debug.Log("Ringmaster state default!");
                 break;
         }
 
@@ -128,18 +186,28 @@ public class RingMaster : Character
         AudienceEnergy.Instance.SetOverrideEnergyMeter(false);
     }
 
-    private IEnumerator MoveToPoint(Vector3 point)
+    private IEnumerator MoveToPoint(Transform point)
     {
         isMoving = true;
 
-        agent.SetDestination(movePoint.position);
+        agent.SetDestination(point.position);
 
-        float distance = Vector3.Distance(transform.position, point);
+        float distance = Vector3.Distance(transform.position, point.position);
         while (distance > 1f)
         {
-            distance = Vector3.Distance(transform.position, point);
+            distance = Vector3.Distance(transform.position, point.position);
 
             Debug.Log("Ringmaster Moving!");
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        float t = 2f;
+        while (t > 0)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, point.rotation, Time.deltaTime * 5f);
+
+            t -=  Time.deltaTime;
 
             yield return new WaitForEndOfFrame();
         }
