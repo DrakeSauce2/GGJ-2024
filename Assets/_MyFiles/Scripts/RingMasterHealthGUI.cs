@@ -30,6 +30,11 @@ public class RingMasterHealthGUI : MonoBehaviour
         healthSlider.value = health;
     }
 
+    private void Update()
+    {
+        healthSlider.value = Mathf.Lerp(healthSlider.value, currentHealth, Time.deltaTime);
+    }
+
     public void ChangeHealthValue(int health)
     {
         currentHealth = health;
@@ -44,7 +49,7 @@ public class RingMasterHealthGUI : MonoBehaviour
 
         while (healthSlider.value > currentHealth)
         {
-            healthSlider.value -= Time.deltaTime;
+            healthSlider.value = Mathf.Lerp(healthSlider.value, currentHealth, Time.deltaTime);
             Debug.Log("Ringmaster Health GUI doing stuff!");
 
             yield return new WaitForEndOfFrame();

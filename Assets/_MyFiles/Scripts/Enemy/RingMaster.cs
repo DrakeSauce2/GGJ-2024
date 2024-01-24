@@ -122,7 +122,7 @@ public class RingMaster : Character
         isAttacking = true;
         AudienceEnergy.Instance.SetOverrideEnergyMeter(true);
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(2f);
 
         isAttacking = false;
         AudienceEnergy.Instance.SetOverrideEnergyMeter(false);
