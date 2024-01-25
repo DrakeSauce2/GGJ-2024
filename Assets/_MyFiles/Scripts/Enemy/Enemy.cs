@@ -65,8 +65,9 @@ public class Enemy : Character
     public virtual void StartDeath()
     {
         isDead = true;
+        gameObject.layer = 7;
 
-        if(stunCoroutine != null)
+        if (stunCoroutine != null)
             StopCoroutine(stunCoroutine);
 
         if(attackCoroutine != null)
@@ -84,7 +85,7 @@ public class Enemy : Character
         ragdoll.EnableRagdoll();
         ragdoll.ApplyForce();
 
-        gameObject.layer = 7;
+        
 
         Destroy(gameObject, 3);
 

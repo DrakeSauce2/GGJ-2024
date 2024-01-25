@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using UnityEngine;
 
 public class RingmasterMinion : Enemy
@@ -7,6 +8,7 @@ public class RingmasterMinion : Enemy
     public override void StartDeath()
     {
         base.StartDeath();
+        gameObject.layer = 7;
 
         isDead = true;
 
@@ -16,8 +18,6 @@ public class RingmasterMinion : Enemy
 
         ragdoll.EnableRagdoll();
         ragdoll.ApplyForce();
-
-        gameObject.layer = 7;
 
         Destroy(gameObject, 3);
     }

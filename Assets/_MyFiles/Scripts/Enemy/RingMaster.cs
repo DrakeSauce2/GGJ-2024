@@ -115,10 +115,12 @@ public class RingMaster : Character
         GameManager.Instance.KillAllInstancedSpawns();
         AudienceEnergy.Instance.StopSpawningCycle();
 
-        healthGUI.gameObject.SetActive(false);  
+        healthGUI.gameObject.SetActive(false);
 
-
+        GameManager.Instance.OpenCurtain();
         GameManager.Instance.SpawnEndDoor();
+
+
     }
 
     private void Update()

@@ -6,11 +6,9 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float elapsedTime = 0;
     bool pauseTimer = false;
 
     [Header("Gameplay")]
-    [SerializeField] bool useGoal = false;
     [SerializeField] float goalTime = 180f; // In Seconds
 
     public float minutes { get; private set; }
@@ -20,9 +18,7 @@ public class Timer : MonoBehaviour
     {
         ProcessTimer();
 
-        if (useGoal == false) return;
-
-        if(elapsedTime >= goalTime)
+        if(goalTime <= 0)
         {
             pauseTimer = true;
 
@@ -31,7 +27,10 @@ public class Timer : MonoBehaviour
 
             GameManager.Instance.KillAllInstancedSpawns();
 
-            // Do outro stuff to boss battle
+            GameManager.Instance.SpawnEndDoor();
+            GameManager.Instance.OpenCurtain();
+
+            gameObject.SetActive(false);
         }
 
     }
@@ -40,9 +39,10 @@ public class Timer : MonoBehaviour
     {
         if (pauseTimer == true) return;
 
-        elapsedTime += Time.deltaTime;
-        minutes = Mathf.FloorToInt(elapsedTime / 60);
-        seconds = Mathf.FloorToInt(elapsedTime % 60);
+        goalTime -= Time.deltaTime;
+
+        minutes = Mathf.FloorToInt(goalTime / 60);
+        seconds = Mathf.FloorToInt(goalTime % 60);
 
         timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }

@@ -95,26 +95,12 @@ public class Player : Character
     {
         if (isAttacking || isDead) return;
 
-        /*
-        Vector2 mousePosition = playerInputActions.Main.MousePosition.ReadValue<Vector2>();
-        Ray ray = Camera.main.ScreenPointToRay(mousePosition);
-
-        if(Physics.Raycast(ray, out RaycastHit hit, 1000f, attackMask))
-        {
-            StartCoroutine(AttackCoroutine(hit.point));
-        }
-        */
-
-        StartCoroutine(AttackCoroutine(Vector3.zero));
+        StartCoroutine(AttackCoroutine());
     }
 
-    private IEnumerator AttackCoroutine(Vector3 direction)
+    private IEnumerator AttackCoroutine()
     {
         isAttacking = true;
-
-        //Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
-
-        //transform.rotation = targetRotation;
 
         damager.StartDamage(0.1f);
 

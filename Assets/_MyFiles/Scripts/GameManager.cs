@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] int minSpawnersToUse = 1, maxSpawnersToUse = 3;
 
+    [Header("Curtains")]
+    [SerializeField] Animator curtainAnimator;
+    [SerializeField] GameObject exitCollider;
+
     private bool forceSpawnStarted = false;
 
     private void Awake()
@@ -32,6 +36,7 @@ public class GameManager : MonoBehaviour
     public void SpawnEndDoor()
     {
         endDoor.SetActive(true);
+        exitCollider.SetActive(false);
     }
 
     public void StartEnemySpawnCycle()
@@ -56,6 +61,14 @@ public class GameManager : MonoBehaviour
         foreach (GameObject objectToKill in instancedSpawns)
         {
             Destroy(objectToKill);
+        }
+    }
+
+    public void OpenCurtain()
+    {
+        if(curtainAnimator != null)
+        {
+            curtainAnimator.SetTrigger("Open");
         }
     }
 
