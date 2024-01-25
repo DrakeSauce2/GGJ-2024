@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] List<GameObject> instancedSpawns = new List<GameObject>();
     [SerializeField] List<TimedSpawner> enemySpawner;
 
+    [SerializeField] GameObject endDoor;
+
     [SerializeField] int minSpawnersToUse = 1, maxSpawnersToUse = 3;
 
     private bool forceSpawnStarted = false;
@@ -25,6 +27,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
 
         Instantiate(playerPrefab, playerSpawnPoint.position, Quaternion.identity);
+    }
+
+    public void SpawnEndDoor()
+    {
+        endDoor.SetActive(true);
     }
 
     public void StartEnemySpawnCycle()

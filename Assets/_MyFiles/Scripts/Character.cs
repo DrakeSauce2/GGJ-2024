@@ -14,6 +14,11 @@ public class Character : MonoBehaviour
     [Space]
     [SerializeField] private int health;
     [SerializeField] private int maxHealth;
+    [Header("Animations")]
+    [SerializeField] Animator animator;
+
+    public Animator _Animation { get { return animator; } }
+
     public int Health { get { return health; } protected set { health = value; } }
     public int MaxHealth { get { return maxHealth; } protected set { maxHealth = value; } }
 
@@ -41,6 +46,7 @@ public class Character : MonoBehaviour
 
     public void ProcessMove(Vector3 moveDir)
     {
+        
         characterController.Move(moveDir.normalized * Time.fixedDeltaTime * movementSpeed);
 
         Quaternion targetRotation = Quaternion.LookRotation(moveDir, transform.up);

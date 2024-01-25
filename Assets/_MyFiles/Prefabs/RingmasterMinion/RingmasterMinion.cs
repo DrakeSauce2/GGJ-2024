@@ -12,7 +12,7 @@ public class RingmasterMinion : Enemy
 
         RingMaster.Instance.RemoveMinionFromList(gameObject);
 
-        Destroy(agent);
+        //Destroy(agent);
 
         ragdoll.EnableRagdoll();
         ragdoll.ApplyForce();

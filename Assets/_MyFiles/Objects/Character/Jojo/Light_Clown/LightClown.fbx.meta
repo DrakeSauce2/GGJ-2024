@@ -1,0 +1,1006 @@
+fileFormatVersion: 2
+guid: 35c91220a98a75f4d88de8878ad0ac82
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Bad_Clown_Rig:Root_M
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Hip_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:HipPart1_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Knee_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Ankle_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Ankle_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Spine_M
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Spine1_M
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Neck_M
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Head_M
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Shoulder_L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Shoulder_R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:ShoulderPart1_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:ShoulderPart1_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Elbow_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:ElbowPart2_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:ElbowPart2_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Toes_L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Toes_R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:ThumbFinger1_L
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:ThumbFinger2_L
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:ThumbFinger3_L
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:IndexFinger1_L
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:IndexFinger2_L
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:IndexFinger3_L
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:MiddleFinger1_L
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:MiddleFinger2_L
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:MiddleFinger3_L
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:RingFinger1_L
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:RingFinger2_L
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:RingFinger3_L
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:PinkyFinger1_L
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:PinkyFinger2_L
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:PinkyFinger3_L
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:ThumbFinger1_R
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:ThumbFinger2_R
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:ThumbFinger3_R
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:IndexFinger1_R
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:IndexFinger2_R
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:IndexFinger3_R
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:MiddleFinger1_R
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:MiddleFinger2_R
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:MiddleFinger3_R
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:RingFinger1_R
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:RingFinger2_R
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:RingFinger3_R
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:PinkyFinger1_R
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:PinkyFinger2_R
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:PinkyFinger3_R
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bad_Clown_Rig:Spine11_M
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: LightClown(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:root
+      parentName: LightClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:Root_M
+      parentName: Bad_Clown_Rig:root
+      position: {x: -1.7487698e-17, y: 0.9307187, z: -0.013719618}
+      rotation: {x: 0.49919775, y: -0.50080097, z: -0.49919775, w: 0.500801}
+      scale: {x: 0.9999999, y: 1, z: 0.99999976}
+    - name: Bad_Clown_Rig:Hip_R
+      parentName: Bad_Clown_Rig:Root_M
+      position: {x: 0.050571606, y: -0.0069226627, z: -0.06385236}
+      rotation: {x: -0.051120702, y: 0.9980567, z: 0.00009053946, w: -0.03563114}
+      scale: {x: 1.0000029, y: 1.000003, z: 1.0000029}
+    - name: Bad_Clown_Rig:HipPart1_R
+      parentName: Bad_Clown_Rig:Hip_R
+      position: {x: -0.124899834, y: -4.9115653e-11, z: -3.7854163e-14}
+      rotation: {x: -0, y: -0, z: 0.000000014901161, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:HipPart2_R
+      parentName: Bad_Clown_Rig:HipPart1_R
+      position: {x: -0.124899834, y: -4.9115653e-11, z: -3.7854163e-14}
+      rotation: {x: 1.16415266e-10, y: -0.0000000037252903, z: -0.000000014901161,
+        w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: Bad_Clown_Rig:Knee_R
+      parentName: Bad_Clown_Rig:HipPart2_R
+      position: {x: -0.124899834, y: -4.911567e-11, z: -3.7854163e-14}
+      rotation: {x: -0, y: -0, z: 0.059140906, w: 0.9982497}
+      scale: {x: 1.0000006, y: 1.0000008, z: 0.99999994}
+    - name: Bad_Clown_Rig:Ankle_R
+      parentName: Bad_Clown_Rig:Knee_R
+      position: {x: -0.40923476, y: -1.6092754e-10, z: 1.4974687e-13}
+      rotation: {x: -0.0057768375, y: -0.035546914, z: -0.0065244287, w: 0.99933004}
+      scale: {x: 1.0000006, y: 1.0000013, z: 1.0000027}
+    - name: Bad_Clown_Rig:Toes_R
+      parentName: Bad_Clown_Rig:Ankle_R
+      position: {x: -0.04771478, y: 0.19460835, z: -5.183968e-10}
+      rotation: {x: 0.0028453171, y: 0.002373308, z: -0.64053017, w: 0.7679241}
+      scale: {x: 0.99999887, y: 0.9999959, z: 0.9999986}
+    - name: Bad_Clown_Rig:ToesEnd_R
+      parentName: Bad_Clown_Rig:Toes_R
+      position: {x: -0.263285, y: -8.2422955e-15, z: 0.00000016177175}
+      rotation: {x: 0.00000012696647, y: 0.00000031535853, z: -4.0039962e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:Spine_M
+      parentName: Bad_Clown_Rig:Root_M
+      position: {x: -0.054318905, y: 8.881784e-18, z: -2.134576e-17}
+      rotation: {x: -0, y: -0, z: 0.009849072, w: 0.99995154}
+      scale: {x: 1.000002, y: 1.000002, z: 1.0000011}
+    - name: Bad_Clown_Rig:Spine1_M
+      parentName: Bad_Clown_Rig:Spine_M
+      position: {x: -0.06583301, y: -1.6431301e-16, z: -1.8863932e-17}
+      rotation: {x: -0, y: -0, z: -0.0056701284, w: 0.9999839}
+      scale: {x: 1.0000012, y: 1.0000012, z: 1.0000013}
+    - name: Bad_Clown_Rig:Spine11_M
+      parentName: Bad_Clown_Rig:Spine1_M
+      position: {x: -0.06303202, y: 3.952394e-16, z: -1.3699235e-17}
+      rotation: {x: -0, y: -0, z: 0.010573653, w: 0.9999441}
+      scale: {x: 1.0000008, y: 1.0000008, z: 1.0000007}
+    - name: Bad_Clown_Rig:Chest_M
+      parentName: Bad_Clown_Rig:Spine11_M
+      position: {x: -0.06306154, y: 1.02140514e-16, z: -1.3772315e-17}
+      rotation: {x: 0.000000029359429, y: -0.00000003023874, z: 0.009241134, w: 0.9999573}
+      scale: {x: 1, y: 1, z: 1.0000011}
+    - name: Bad_Clown_Rig:Scapula_R
+      parentName: Bad_Clown_Rig:Chest_M
+      position: {x: -0.03406973, y: -0.026372092, z: -0.045570374}
+      rotation: {x: 0.020629719, y: 0.79682094, z: 0.015507042, w: -0.60366416}
+      scale: {x: 0.9999992, y: 0.9999996, z: 0.9999986}
+    - name: Bad_Clown_Rig:Shoulder_R
+      parentName: Bad_Clown_Rig:Scapula_R
+      position: {x: -0.10069786, y: -3.5704772e-15, z: 1.563194e-15}
+      rotation: {x: 0.0033796038, y: 0.13658303, z: 0.025878321, w: 0.99028486}
+      scale: {x: 1.0000037, y: 1.0000014, z: 1.0000011}
+    - name: Bad_Clown_Rig:ShoulderPart1_R
+      parentName: Bad_Clown_Rig:Shoulder_R
+      position: {x: -0.077318534, y: -5.3290704e-17, z: -3.126388e-15}
+      rotation: {x: -0, y: -0, z: 4.6566123e-10, w: 1}
+      scale: {x: 1.0000035, y: 1.0000011, z: 1.0000007}
+    - name: Bad_Clown_Rig:ShoulderPart2_R
+      parentName: Bad_Clown_Rig:ShoulderPart1_R
+      position: {x: -0.077318534, y: -3.1086245e-17, z: -3.5527137e-15}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.000003, y: 1.0000011, z: 1.0000012}
+    - name: Bad_Clown_Rig:Elbow_R
+      parentName: Bad_Clown_Rig:ShoulderPart2_R
+      position: {x: -0.077318534, y: -2.6645352e-17, z: -3.2684964e-15}
+      rotation: {x: -0.00000003146124, y: -6.9849193e-10, z: -0.030971074, w: 0.9995203}
+      scale: {x: 0.999996, y: 0.99999934, z: 0.99999946}
+    - name: Bad_Clown_Rig:ElbowPart1_R
+      parentName: Bad_Clown_Rig:Elbow_R
+      position: {x: -0.07500839, y: -7.9936054e-17, z: -3.126388e-15}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:ElbowPart2_R
+      parentName: Bad_Clown_Rig:ElbowPart1_R
+      position: {x: -0.07500839, y: -5.3290704e-17, z: -3.8369305e-15}
+      rotation: {x: -0, y: -0, z: -2.1975423e-17, w: 1}
+      scale: {x: 1, y: 0.9999998, z: 0.9999991}
+    - name: Bad_Clown_Rig:Wrist_R
+      parentName: Bad_Clown_Rig:ElbowPart2_R
+      position: {x: -0.07500839, y: -7.9936054e-17, z: -2.9842794e-15}
+      rotation: {x: 0.0011592689, y: 0.039493315, z: -0.025062384, w: 0.9989048}
+      scale: {x: 1.0000025, y: 1.0000013, z: 1.0000029}
+    - name: Bad_Clown_Rig:MiddleFinger1_R
+      parentName: Bad_Clown_Rig:Wrist_R
+      position: {x: -0.15049843, y: 5.1514347e-16, z: 1.847411e-15}
+      rotation: {x: -0.00031534283, y: -0.062173273, z: 0.02245134, w: 0.9978128}
+      scale: {x: 0.9999946, y: 0.9999971, z: 0.99999577}
+    - name: Bad_Clown_Rig:MiddleFinger2_R
+      parentName: Bad_Clown_Rig:MiddleFinger1_R
+      position: {x: -0.05048412, y: 8.881784e-18, z: 2.5579537e-15}
+      rotation: {x: -0.00020132773, y: 0.016338674, z: -0.0024945291, w: 0.9998634}
+      scale: {x: 1.000004, y: 1.0000017, z: 1.0000031}
+    - name: Bad_Clown_Rig:MiddleFinger3_R
+      parentName: Bad_Clown_Rig:MiddleFinger2_R
+      position: {x: -0.04676964, y: -1.1546319e-16, z: 1.4210854e-16}
+      rotation: {x: -0.00018922816, y: 0.011847527, z: -0.020922117, w: 0.9997109}
+      scale: {x: 0.99999875, y: 1, z: 0.9999996}
+    - name: Bad_Clown_Rig:MiddleFinger4_R
+      parentName: Bad_Clown_Rig:MiddleFinger3_R
+      position: {x: -0.04218654, y: 5.3290704e-17, z: -5.684342e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:ThumbFinger1_R
+      parentName: Bad_Clown_Rig:Wrist_R
+      position: {x: -0.018072028, y: 0.0117489435, z: -0.010413001}
+      rotation: {x: -0.32951576, y: 0.16524258, z: -0.4107095, w: 0.8339257}
+      scale: {x: 0.999994, y: 0.9999941, z: 0.999996}
+    - name: Bad_Clown_Rig:ThumbFinger2_R
+      parentName: Bad_Clown_Rig:ThumbFinger1_R
+      position: {x: -0.06463602, y: -5.684342e-16, z: -6.3948843e-16}
+      rotation: {x: -0.011950158, y: -0.034631833, z: 0.009542527, w: 0.9992832}
+      scale: {x: 1.0000068, y: 1.0000021, z: 0.9999972}
+    - name: Bad_Clown_Rig:ThumbFinger3_R
+      parentName: Bad_Clown_Rig:ThumbFinger2_R
+      position: {x: -0.035569925, y: 5.684342e-16, z: -4.2632563e-16}
+      rotation: {x: 0.0014759682, y: 0.014227388, z: -0.012488143, w: 0.9998197}
+      scale: {x: 1.0000043, y: 1.000004, z: 1.0000019}
+    - name: Bad_Clown_Rig:ThumbFinger4_R
+      parentName: Bad_Clown_Rig:ThumbFinger3_R
+      position: {x: -0.04273987, y: -8.5265126e-16, z: 8.5265126e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:IndexFinger1_R
+      parentName: Bad_Clown_Rig:Wrist_R
+      position: {x: -0.14003882, y: 0.03999268, z: 0.0038681738}
+      rotation: {x: 0.009639207, y: -0.04276757, z: -0.06791471, w: 0.9967274}
+      scale: {x: 0.99999803, y: 0.99999934, z: 0.99999756}
+    - name: Bad_Clown_Rig:IndexFinger2_R
+      parentName: Bad_Clown_Rig:IndexFinger1_R
+      position: {x: -0.05860411, y: -1.5987211e-16, z: 7.105427e-16}
+      rotation: {x: -0.000036491547, y: -0.0011435224, z: -0.006191805, w: 0.99998015}
+      scale: {x: 0.9999972, y: 0.9999992, z: 0.99999946}
+    - name: Bad_Clown_Rig:IndexFinger3_R
+      parentName: Bad_Clown_Rig:IndexFinger2_R
+      position: {x: -0.03560173, y: 3.5527136e-17, z: -1.4210854e-16}
+      rotation: {x: -0.014171723, y: 0.021992639, z: -0.020580145, w: 0.9994459}
+      scale: {x: 1.0000054, y: 1.000002, z: 1.0000031}
+    - name: Bad_Clown_Rig:IndexFinger4_R
+      parentName: Bad_Clown_Rig:IndexFinger3_R
+      position: {x: -0.03750544, y: -1.4210854e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:Cup_R
+      parentName: Bad_Clown_Rig:Wrist_R
+      position: {x: -0.017440395, y: -0.010004159, z: -0.0014821521}
+      rotation: {x: 0.07244155, y: -0.00330493, z: 0.037756562, w: 0.99665225}
+      scale: {x: 1.0000006, y: 0.9999983, z: 1.0000006}
+    - name: Bad_Clown_Rig:PinkyFinger1_R
+      parentName: Bad_Clown_Rig:Cup_R
+      position: {x: -0.102259666, y: -0.055582054, z: 0.0002676804}
+      rotation: {x: -0.1022402, y: -0.023806026, z: 0.045514084, w: 0.9934328}
+      scale: {x: 1.0000018, y: 0.99999994, z: 0.9999992}
+    - name: Bad_Clown_Rig:PinkyFinger2_R
+      parentName: Bad_Clown_Rig:PinkyFinger1_R
+      position: {x: -0.050694484, y: 0, z: -2.842171e-16}
+      rotation: {x: 0.0024218932, y: 0.008339245, z: -0.02329583, w: 0.99969095}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.999999}
+    - name: Bad_Clown_Rig:PinkyFinger3_R
+      parentName: Bad_Clown_Rig:PinkyFinger2_R
+      position: {x: -0.037032366, y: -3.2862602e-16, z: -4.2632563e-16}
+      rotation: {x: 0.01841662, y: 0.015560739, z: -0.0018649027, w: 0.9997076}
+      scale: {x: 1.0000013, y: 1, z: 1.0000008}
+    - name: Bad_Clown_Rig:PinkyFinger4_R
+      parentName: Bad_Clown_Rig:PinkyFinger3_R
+      position: {x: -0.036823124, y: 5.3290704e-17, z: 5.684342e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:RingFinger1_R
+      parentName: Bad_Clown_Rig:Cup_R
+      position: {x: -0.1280574, y: -0.020161988, z: -0.00016817379}
+      rotation: {x: -0.07985082, y: -0.025405878, z: 0.050441258, w: 0.9952056}
+      scale: {x: 1.0000026, y: 1.0000002, z: 1.0000018}
+    - name: Bad_Clown_Rig:RingFinger2_R
+      parentName: Bad_Clown_Rig:RingFinger1_R
+      position: {x: -0.048932295, y: -1.5099033e-16, z: -1.1368684e-15}
+      rotation: {x: -0.0028626202, y: -0.005510457, z: -0.009920046, w: 0.9999316}
+      scale: {x: 1.0000042, y: 1.0000017, z: 1.0000014}
+    - name: Bad_Clown_Rig:RingFinger3_R
+      parentName: Bad_Clown_Rig:RingFinger2_R
+      position: {x: -0.037877697, y: 2.220446e-16, z: -1.7053025e-15}
+      rotation: {x: 0.006322009, y: 0.015263708, z: 0.02859303, w: 0.99945456}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1}
+    - name: Bad_Clown_Rig:RingFinger4_R
+      parentName: Bad_Clown_Rig:RingFinger3_R
+      position: {x: -0.041856732, y: -1.2434498e-16, z: 2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:Neck_M
+      parentName: Bad_Clown_Rig:Chest_M
+      position: {x: -0.07925153, y: 1.5987211e-16, z: 4.063717e-16}
+      rotation: {x: 0.000000029802322, y: 0.000000029802322, z: -0.06691998, w: 0.9977584}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1}
+    - name: Bad_Clown_Rig:Head_M
+      parentName: Bad_Clown_Rig:Neck_M
+      position: {x: -0.15973292, y: -1.4210854e-16, z: -1.5724741e-17}
+      rotation: {x: -0.000000029802322, y: -0.000000029802322, z: 0.041071117, w: 0.99915624}
+      scale: {x: 1.0000007, y: 1.0000008, z: 1}
+    - name: Bad_Clown_Rig:HeadEnd_M
+      parentName: Bad_Clown_Rig:Head_M
+      position: {x: -0.1332416, y: -4.440892e-18, z: 3.7094104e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:Eye_R
+      parentName: Bad_Clown_Rig:Head_M
+      position: {x: -0.01982671, y: 0.08117391, z: -0.08411095}
+      rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:EyeEnd_R
+      parentName: Bad_Clown_Rig:Eye_R
+      position: {x: -0.015160854, y: -3.410605e-15, z: 2.664535e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:Jaw_M
+      parentName: Bad_Clown_Rig:Head_M
+      position: {x: 0.03484673, y: 0.026677405, z: -5.513801e-17}
+      rotation: {x: -0, y: 0, z: 0.87661177, w: -0.4811983}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:JawEnd_M
+      parentName: Bad_Clown_Rig:Jaw_M
+      position: {x: -0.08340301, y: -1.4210854e-15, z: -1.9239673e-19}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:Eye_L
+      parentName: Bad_Clown_Rig:Head_M
+      position: {x: -0.01982671, y: 0.08117391, z: 0.08411095}
+      rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:EyeEnd_L
+      parentName: Bad_Clown_Rig:Eye_L
+      position: {x: -0.015160854, y: -3.694822e-15, z: -2.664535e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:Scapula_L
+      parentName: Bad_Clown_Rig:Chest_M
+      position: {x: -0.03406973, y: -0.026372092, z: 0.045570374}
+      rotation: {x: -0.7968209, y: 0.02062982, z: -0.6036643, w: -0.015507096}
+      scale: {x: 0.99999875, y: 0.99999887, z: 0.9999998}
+    - name: Bad_Clown_Rig:Shoulder_L
+      parentName: Bad_Clown_Rig:Scapula_L
+      position: {x: 0.10069786, y: 3.623768e-15, z: -1.2789769e-15}
+      rotation: {x: 0.0033796607, y: 0.13658296, z: 0.025878297, w: 0.99028486}
+      scale: {x: 1.000003, y: 1.0000006, z: 1.000001}
+    - name: Bad_Clown_Rig:ShoulderPart1_L
+      parentName: Bad_Clown_Rig:Shoulder_L
+      position: {x: 0.077318534, y: 3.9968027e-17, z: 3.126388e-15}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 0.99999875, y: 0.9999985, z: 0.9999986}
+    - name: Bad_Clown_Rig:ShoulderPart2_L
+      parentName: Bad_Clown_Rig:ShoulderPart1_L
+      position: {x: 0.077318534, y: 6.217249e-17, z: 3.5527137e-15}
+      rotation: {x: -0, y: -0, z: 4.0745357e-10, w: 1}
+      scale: {x: 1.0000024, y: 1.0000018, z: 1.0000006}
+    - name: Bad_Clown_Rig:Elbow_L
+      parentName: Bad_Clown_Rig:ShoulderPart2_L
+      position: {x: 0.077318534, y: 5.3290704e-17, z: 3.8369305e-15}
+      rotation: {x: -0.00000003146124, y: -0.0000000011641532, z: -0.030971076, w: 0.9995203}
+      scale: {x: 0.999999, y: 1.000001, z: 0.9999992}
+    - name: Bad_Clown_Rig:ElbowPart1_L
+      parentName: Bad_Clown_Rig:Elbow_L
+      position: {x: 0.07500839, y: 6.217249e-17, z: 3.2684964e-15}
+      rotation: {x: -0, y: -0, z: -3.6625705e-17, w: 1}
+      scale: {x: 1.0000002, y: 1.000001, z: 0.9999992}
+    - name: Bad_Clown_Rig:ElbowPart2_L
+      parentName: Bad_Clown_Rig:ElbowPart1_L
+      position: {x: 0.07500839, y: 7.105427e-17, z: 3.126388e-15}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 0.9999997, y: 0.99999994, z: 1.0000017}
+    - name: Bad_Clown_Rig:Wrist_L
+      parentName: Bad_Clown_Rig:ElbowPart2_L
+      position: {x: 0.07500839, y: 5.3290704e-17, z: 3.410605e-15}
+      rotation: {x: -0.0011592689, y: -0.03949331, z: 0.025062382, w: -0.9989048}
+      scale: {x: 1.0000023, y: 1, z: 1.0000013}
+    - name: Bad_Clown_Rig:MiddleFinger1_L
+      parentName: Bad_Clown_Rig:Wrist_L
+      position: {x: 0.15049843, y: -4.440892e-16, z: -1.847411e-15}
+      rotation: {x: 0.00031534306, y: 0.06217327, z: -0.02245134, w: -0.9978128}
+      scale: {x: 0.99999756, y: 1, z: 0.9999992}
+    - name: Bad_Clown_Rig:MiddleFinger2_L
+      parentName: Bad_Clown_Rig:MiddleFinger1_L
+      position: {x: 0.05048412, y: -1.7763568e-17, z: -2.131628e-15}
+      rotation: {x: -0.00020143483, y: 0.016338665, z: -0.0024945252, w: 0.99986345}
+      scale: {x: 1.0000063, y: 1.0000038, z: 1.0000051}
+    - name: Bad_Clown_Rig:MiddleFinger3_L
+      parentName: Bad_Clown_Rig:MiddleFinger2_L
+      position: {x: 0.04676964, y: 1.0658141e-16, z: 2.842171e-16}
+      rotation: {x: -0.00018916867, y: 0.0118475305, z: -0.02092213, w: 0.999711}
+      scale: {x: 1.0000037, y: 1.0000013, z: 0.99999994}
+    - name: Bad_Clown_Rig:MiddleFinger4_L
+      parentName: Bad_Clown_Rig:MiddleFinger3_L
+      position: {x: 0.04218654, y: -3.5527136e-17, z: 1.4210854e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:ThumbFinger1_L
+      parentName: Bad_Clown_Rig:Wrist_L
+      position: {x: 0.018072028, y: -0.0117489435, z: 0.010413001}
+      rotation: {x: 0.32947767, y: -0.16530521, z: 0.41064665, w: -0.8339592}
+      scale: {x: 0.9999997, y: 0.9999991, z: 0.9999985}
+    - name: Bad_Clown_Rig:ThumbFinger2_L
+      parentName: Bad_Clown_Rig:ThumbFinger1_L
+      position: {x: 0.06463602, y: 2.842171e-16, z: 7.81597e-16}
+      rotation: {x: -0.011950101, y: -0.03463446, z: 0.009544507, w: 0.9992831}
+      scale: {x: 1.0000054, y: 1, z: 1.0000033}
+    - name: Bad_Clown_Rig:ThumbFinger3_L
+      parentName: Bad_Clown_Rig:ThumbFinger2_L
+      position: {x: 0.035569925, y: -7.105427e-16, z: 4.973799e-16}
+      rotation: {x: 0.0014760585, y: 0.014227388, z: -0.012488047, w: 0.99981976}
+      scale: {x: 1.0000021, y: 1, z: 1.0000019}
+    - name: Bad_Clown_Rig:ThumbFinger4_L
+      parentName: Bad_Clown_Rig:ThumbFinger3_L
+      position: {x: 0.04273987, y: 9.947598e-16, z: -5.684342e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:IndexFinger1_L
+      parentName: Bad_Clown_Rig:Wrist_L
+      position: {x: 0.14003882, y: -0.03999268, z: -0.0038681738}
+      rotation: {x: 0.009639214, y: -0.042767417, z: -0.06791489, w: 0.9967274}
+      scale: {x: 1, y: 1.0000015, z: 1.0000007}
+    - name: Bad_Clown_Rig:IndexFinger2_L
+      parentName: Bad_Clown_Rig:IndexFinger1_L
+      position: {x: 0.05860411, y: 2.4868996e-16, z: -7.105427e-16}
+      rotation: {x: -0.000036431476, y: -0.0011435151, z: -0.0061917603, w: 0.9999802}
+      scale: {x: 1.0000005, y: 0.9999998, z: 1.0000002}
+    - name: Bad_Clown_Rig:IndexFinger3_L
+      parentName: Bad_Clown_Rig:IndexFinger2_L
+      position: {x: 0.03560173, y: -1.4210854e-16, z: 1.4210854e-16}
+      rotation: {x: 0.014171753, y: -0.021992626, z: 0.020580186, w: -0.9994458}
+      scale: {x: 1.0000001, y: 0.99999934, z: 0.99999887}
+    - name: Bad_Clown_Rig:IndexFinger4_L
+      parentName: Bad_Clown_Rig:IndexFinger3_L
+      position: {x: 0.03750544, y: 7.105427e-17, z: -1.4210854e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:Cup_L
+      parentName: Bad_Clown_Rig:Wrist_L
+      position: {x: 0.017440395, y: 0.010004159, z: 0.0014821521}
+      rotation: {x: 0.07244149, y: -0.0033049355, z: 0.037756562, w: 0.99665225}
+      scale: {x: 1.0000024, y: 1.000002, z: 1.000001}
+    - name: Bad_Clown_Rig:PinkyFinger1_L
+      parentName: Bad_Clown_Rig:Cup_L
+      position: {x: 0.102259666, y: 0.055582054, z: -0.0002676804}
+      rotation: {x: 0.10224039, y: 0.023806263, z: -0.045513403, w: -0.9934329}
+      scale: {x: 1.0000024, y: 1.0000008, z: 1.0000038}
+    - name: Bad_Clown_Rig:PinkyFinger2_L
+      parentName: Bad_Clown_Rig:PinkyFinger1_L
+      position: {x: 0.050694484, y: 4.6185276e-16, z: 2.842171e-16}
+      rotation: {x: 0.0024218876, y: 0.008339249, z: -0.02329573, w: 0.99969095}
+      scale: {x: 0.99999946, y: 0.99999934, z: 0.99999875}
+    - name: Bad_Clown_Rig:PinkyFinger3_L
+      parentName: Bad_Clown_Rig:PinkyFinger2_L
+      position: {x: 0.037032366, y: 2.220446e-16, z: 9.947598e-16}
+      rotation: {x: 0.018416617, y: 0.015560731, z: -0.0018649325, w: 0.9997076}
+      scale: {x: 0.9999983, y: 0.9999996, z: 0.9999991}
+    - name: Bad_Clown_Rig:PinkyFinger4_L
+      parentName: Bad_Clown_Rig:PinkyFinger3_L
+      position: {x: 0.036823124, y: 0, z: -7.105427e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:RingFinger1_L
+      parentName: Bad_Clown_Rig:Cup_L
+      position: {x: 0.1280574, y: 0.020161988, z: 0.00016817379}
+      rotation: {x: 0.07985086, y: 0.025406128, z: -0.0504411, w: -0.9952055}
+      scale: {x: 0.99999696, y: 0.9999983, z: 1.0000006}
+    - name: Bad_Clown_Rig:RingFinger2_L
+      parentName: Bad_Clown_Rig:RingFinger1_L
+      position: {x: 0.048932295, y: 2.220446e-16, z: 1.4210854e-15}
+      rotation: {x: -0.0028626197, y: -0.005510453, z: -0.009920042, w: 0.9999316}
+      scale: {x: 1.0000074, y: 1.0000042, z: 1.0000035}
+    - name: Bad_Clown_Rig:RingFinger3_L
+      parentName: Bad_Clown_Rig:RingFinger2_L
+      position: {x: 0.037877697, y: -3.907985e-16, z: 1.1368684e-15}
+      rotation: {x: 0.006322039, y: 0.015263716, z: 0.028593022, w: 0.9994546}
+      scale: {x: 1.000003, y: 1.000001, z: 1}
+    - name: Bad_Clown_Rig:RingFinger4_L
+      parentName: Bad_Clown_Rig:RingFinger3_L
+      position: {x: 0.041856732, y: 8.8817837e-17, z: -4.2632563e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:Hip_L
+      parentName: Bad_Clown_Rig:Root_M
+      position: {x: 0.050571606, y: -0.0069226627, z: 0.06385236}
+      rotation: {x: 0.99805665, y: 0.051120706, z: 0.035631176, w: 0.00009046494}
+      scale: {x: 1.0000021, y: 1.0000023, z: 1.0000039}
+    - name: Bad_Clown_Rig:HipPart1_L
+      parentName: Bad_Clown_Rig:Hip_L
+      position: {x: 0.124899834, y: 4.911568e-11, z: 3.788969e-14}
+      rotation: {x: 1.1641531e-10, y: -0.000000003724835, z: -0, w: 1}
+      scale: {x: 1.0000014, y: 1.0000011, z: 1.0000011}
+    - name: Bad_Clown_Rig:HipPart2_L
+      parentName: Bad_Clown_Rig:HipPart1_L
+      position: {x: 0.124899834, y: 4.9115732e-11, z: 3.7818635e-14}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:Knee_L
+      parentName: Bad_Clown_Rig:HipPart2_L
+      position: {x: 0.124899834, y: 4.9115687e-11, z: 3.792522e-14}
+      rotation: {x: -0.000000014901161, y: 0.000000014901161, z: -0.05914107, w: -0.9982497}
+      scale: {x: 0.9999998, y: 1.0000007, z: 0.99999994}
+    - name: Bad_Clown_Rig:Ankle_L
+      parentName: Bad_Clown_Rig:Knee_L
+      position: {x: 0.40923476, y: 1.6092727e-10, z: -1.4958701e-13}
+      rotation: {x: 0.0057768966, y: 0.035546865, z: 0.006524413, w: -0.99933004}
+      scale: {x: 0.9999998, y: 1.0000005, z: 0.9999998}
+    - name: Bad_Clown_Rig:Toes_L
+      parentName: Bad_Clown_Rig:Ankle_L
+      position: {x: 0.047714785, y: -0.19460835, z: 2.4940973e-11}
+      rotation: {x: 0.0028456748, y: 0.0023735762, z: -0.6405303, w: 0.7679241}
+      scale: {x: 1.0000021, y: 1.0000068, z: 1.0000027}
+    - name: Bad_Clown_Rig:ToesEnd_L
+      parentName: Bad_Clown_Rig:Toes_L
+      position: {x: 0.263285, y: -7.105427e-16, z: 0.00000001800255}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:EnemyClowns_Rig:EnemyClown_02_Head_geo
+      parentName: LightClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:EnemyClowns_Rig:EnemyClown_02_Hat_geo
+      parentName: LightClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:EnemyClowns_Rig:EnemyClown_02_Nose_geo
+      parentName: LightClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:EnemyClowns_Rig:EnemyClown_02_Legs_geo
+      parentName: LightClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:EnemyClowns_Rig:EnemyClown_02_Knees_geo
+      parentName: LightClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:EnemyClowns_Rig:EnemyClown_02_R_Eye_geo
+      parentName: LightClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:EnemyClowns_Rig:EnemyClown_02_L_Eye_geo
+      parentName: LightClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bad_Clown_Rig:EnemyClowns_Rig:EnemyClown_02_Body_geo
+      parentName: LightClown(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

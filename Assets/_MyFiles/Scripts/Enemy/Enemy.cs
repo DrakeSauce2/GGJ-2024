@@ -45,8 +45,10 @@ public class Enemy : Character
 
         isStunned = true;
 
-        if (agent != null)
-            agent.SetDestination(transform.position);
+        agent.isStopped = true;
+
+        _Animation.StopPlayback();
+        _Animation.ResetTrigger("Attack");
 
         if (attackCoroutine != null)
             StopCoroutine(attackCoroutine);
@@ -54,6 +56,7 @@ public class Enemy : Character
         yield return new WaitForSeconds(1.3f);
 
         isStunned = false;
+        agent.isStopped = false;
 
         if (agent != null)
             agent.SetDestination(Player.Instance.transform.position);
@@ -63,11 +66,20 @@ public class Enemy : Character
     {
         isDead = true;
 
+        if(stunCoroutine != null)
+            StopCoroutine(stunCoroutine);
+
+        if(attackCoroutine != null)
+            StopCoroutine(attackCoroutine);
+
+        agent.ResetPath();
+        agent.isStopped = true;
+        agent.updatePosition = false;
+
         GameManager.Instance.RemoveEnemyFromList(gameObject);
 
-        StopAllCoroutines();
+        //Destroy(agent);
 
-        Destroy(agent);
 
         ragdoll.EnableRagdoll();
         ragdoll.ApplyForce();
@@ -101,15 +113,20 @@ public class Enemy : Character
         if (agent == null) yield return null;
 
         isAttacking = true;
+        _Animation.SetTrigger("Attack");
 
-        // Attack Stuff and animation here
-        Debug.Log("Enemy Attacking!");
-        damager.StartDamage(1f);
+        yield return new WaitForSeconds(1.5f); 
 
-        yield return new WaitForSeconds(1.5f); // Arbitrary time until animations are implemented
+        _Animation.ResetTrigger("Attack");
+
         isAttacking = false;
 
         agent.SetDestination(Player.Instance.transform.position);
+    }
+
+    public void Damage(float duration)
+    {
+        damager.StartDamage(duration);
     }
 
 }

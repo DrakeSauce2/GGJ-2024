@@ -19,6 +19,10 @@ public class Player : Character
     [Header("Hat")]
     [SerializeField] private GameObject headObj;
     [SerializeField] private Transform headPoint;
+
+    [Header("Bug Fix")]
+    [SerializeField] Transform jojo;
+
     public Transform HeadPoint { get { return headPoint; } }
 
     bool isAttacking = false;
@@ -64,6 +68,11 @@ public class Player : Character
         LoseScreen.Instance.Lose();
     }
 
+    private void Update()
+    {
+        jojo.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+    }
+
     private void FixedUpdate()
     {
         if (isAttacking || isDead) return;
@@ -76,7 +85,9 @@ public class Player : Character
         Vector2 moveInput = playerInputActions.Main.Move.ReadValue<Vector2>();
         Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
 
-        if(moveInput.magnitude > 0)
+        _Animation.SetFloat("speed", moveDirection.magnitude);
+
+        if (moveInput.magnitude > 0)
             ProcessMove(moveDirection);
     }
 

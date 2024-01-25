@@ -50,7 +50,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6247539345438075637}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 35c91220a98a75f4d88de8878ad0ac82, type: 3}
   m_Controller: {fileID: 9100000, guid: a96564c4044786245873235e1579dd9a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -195,6 +195,7 @@ MonoBehaviour:
   rotateSpeed: 20
   health: 1
   maxHealth: 1
+  animator: {fileID: 8348309942890054813}
   invulnerableDuration: 0
   teamIndex: 1
   isDamagable: 1

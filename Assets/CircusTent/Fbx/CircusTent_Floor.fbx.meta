@@ -3,12 +3,7 @@ guid: 46042e6e43ab65c43ad21262093ff048
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: CircusTentFloor_Mat
-    second: {fileID: 2100000, guid: a91ff64e48853aa4489df7deb2377e78, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
