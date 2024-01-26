@@ -78,7 +78,8 @@ MonoBehaviour:
     type: 3}
   rangeFromPlayer: 3
   doDamage: 1
-  hitSound: {fileID: 0}
+  _SFXSource: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 58f09135a1b1849478fa3882ce842455, type: 3}
 --- !u!33 &8808513078267669155
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -101,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: {fileID: 6312980804255713903}
   damage: 1
-  team: 2
+  team: 1
 --- !u!114 &-9060181544670018854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +276,7 @@ PrefabInstance:
     - target: {fileID: 2788262858327006447, guid: b9590351e7004c54886cb059331e28c6,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2788262858327006447, guid: b9590351e7004c54886cb059331e28c6,
         type: 3}
@@ -285,7 +286,7 @@ PrefabInstance:
     - target: {fileID: 2788262858327006447, guid: b9590351e7004c54886cb059331e28c6,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2788262858327006447, guid: b9590351e7004c54886cb059331e28c6,
         type: 3}
@@ -295,7 +296,7 @@ PrefabInstance:
     - target: {fileID: 2788262858327006447, guid: b9590351e7004c54886cb059331e28c6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.51
       objectReference: {fileID: 0}
     - target: {fileID: 2788262858327006447, guid: b9590351e7004c54886cb059331e28c6,
         type: 3}
@@ -350,7 +351,7 @@ PrefabInstance:
     - target: {fileID: 5039783662325248356, guid: b9590351e7004c54886cb059331e28c6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

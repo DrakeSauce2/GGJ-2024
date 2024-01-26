@@ -329,18 +329,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83ed8223fb881994d98204028ccd8f88, type: 3}
---- !u!82 &181351549 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: -3786589745777246800, guid: becef7a7979b914459b38f9a40d2c15d,
-    type: 3}
-  m_PrefabInstance: {fileID: 746327517621242372}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &181351550 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: -3761589420614549048, guid: becef7a7979b914459b38f9a40d2c15d,
-    type: 3}
-  m_PrefabInstance: {fileID: 746327517621242372}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,17 +1537,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: JoJo's off his meds
+  m_text: jojo the clown; carnival of comedy
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8598f75ed0cd43a48be2d6d57e0011fc, type: 2}
+  m_sharedMaterial: {fileID: 7401000586774882019, guid: 8598f75ed0cd43a48be2d6d57e0011fc,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2581,6 +2570,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3786589745777246800, guid: becef7a7979b914459b38f9a40d2c15d,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3786589745777246800, guid: becef7a7979b914459b38f9a40d2c15d,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 62a7e5364a35c624083247f4b11ef660, type: 3}
     - target: {fileID: 2460504407860268367, guid: becef7a7979b914459b38f9a40d2c15d,
         type: 3}
       propertyPath: m_Name
@@ -2588,30 +2587,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2705976114736012859, guid: becef7a7979b914459b38f9a40d2c15d,
         type: 3}
-      propertyPath: _SFXSource
-      value: 
-      objectReference: {fileID: 181351549}
-    - target: {fileID: 2705976114736012859, guid: becef7a7979b914459b38f9a40d2c15d,
-        type: 3}
       propertyPath: _MusicSlider
       value: 
       objectReference: {fileID: 1451405357}
     - target: {fileID: 2705976114736012859, guid: becef7a7979b914459b38f9a40d2c15d,
         type: 3}
-      propertyPath: _MusicSource
-      value: 
-      objectReference: {fileID: 181351550}
-    - target: {fileID: 2705976114736012859, guid: becef7a7979b914459b38f9a40d2c15d,
-        type: 3}
       propertyPath: _SoundSlider
       value: 
       objectReference: {fileID: 767622900}
-    - target: {fileID: 2705976114736012859, guid: becef7a7979b914459b38f9a40d2c15d,
-        type: 3}
-      propertyPath: soundSettings
-      value: 
-      objectReference: {fileID: 11400000, guid: 3853346495910794ab549a0b348fa7ef,
-        type: 2}
     - target: {fileID: 3397669491694154860, guid: becef7a7979b914459b38f9a40d2c15d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2675,6 +2658,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 895454610}
     m_Modifications:
+    - target: {fileID: 569307703183440262, guid: 2251d10491cbdfb4eb7968fc3ff789bb,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 569307703183440262, guid: 2251d10491cbdfb4eb7968fc3ff789bb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 569307703183440262, guid: 2251d10491cbdfb4eb7968fc3ff789bb,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1248553545165929193, guid: 2251d10491cbdfb4eb7968fc3ff789bb,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1248553545165929193, guid: 2251d10491cbdfb4eb7968fc3ff789bb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2871987903207081289, guid: 2251d10491cbdfb4eb7968fc3ff789bb,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2871987903207081289, guid: 2251d10491cbdfb4eb7968fc3ff789bb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4328005434851854077, guid: 2251d10491cbdfb4eb7968fc3ff789bb,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2784,6 +2802,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Options_GUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674883267536121688, guid: 2251d10491cbdfb4eb7968fc3ff789bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533870386310685172, guid: 2251d10491cbdfb4eb7968fc3ff789bb,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533870386310685172, guid: 2251d10491cbdfb4eb7968fc3ff789bb,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533870386310685172, guid: 2251d10491cbdfb4eb7968fc3ff789bb,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -46,6 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd35458dc0c23664d9de70d707337f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundSettings: {fileID: 11400000, guid: 3853346495910794ab549a0b348fa7ef, type: 2}
+  _SFXSource: {fileID: -3761589420614549048}
+  _MusicSource: {fileID: -3786589745777246800}
+  _SoundSlider: {fileID: 0}
+  _MusicSlider: {fileID: 0}
+  deathSounds:
+  - {fileID: 8300000, guid: a9e41d53a5a9baf43bed89ea1a010db3, type: 3}
+  - {fileID: 8300000, guid: 2ca6817fc80942c41be93219f0ecd48f, type: 3}
+  - {fileID: 8300000, guid: cc7006d65a56be64c86c2238b52bf694, type: 3}
 --- !u!82 &-3761589420614549048
 AudioSource:
   m_ObjectHideFlags: 0
@@ -152,7 +161,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 29cb7fba1e4a51949857133639d4a3f8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

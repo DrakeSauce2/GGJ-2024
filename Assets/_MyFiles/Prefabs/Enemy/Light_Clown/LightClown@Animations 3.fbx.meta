@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a2ed292d20b16254b9485cd050b60ed1
+guid: d0615d89ba0033f4d8b40c8f675a0b7b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Walk
+      name: Animations 3
       takeName: LightClown@Animations
       internalID: -109850038109243247
-      firstFrame: 0
-      lastFrame: 35
+      firstFrame: 1
+      lastFrame: 33
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

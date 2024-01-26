@@ -10,6 +10,9 @@ public class LoseScreen : MonoBehaviour
     [SerializeField] private GameObject loseScreen;
     [SerializeField] private GameObject mainGUI;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip loseAudio;
+
     public bool gameOver { get; private set; }
 
     private void Awake()
@@ -23,6 +26,8 @@ public class LoseScreen : MonoBehaviour
     public void Lose()
     {
         gameOver = true;
+
+        AudioManager.Instance.SetMusic(loseAudio);
 
         Time.timeScale = 0f;      
         mainGUI.SetActive(false);

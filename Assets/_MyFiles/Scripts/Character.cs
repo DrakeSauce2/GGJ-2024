@@ -41,6 +41,8 @@ public class Character : MonoBehaviour
 
     [SerializeField] private bool isDamagable = true;
 
+    protected bool isDead = false;
+
     public void Init(GameObject owner)
     {
         characterController = GetComponent<CharacterController>();
@@ -55,15 +57,14 @@ public class Character : MonoBehaviour
         Debug.Log(AudioManager.Instance);
     }
 
-
-    private void Start()
+    private void Update()
     {
         _SFXSource.volume = AudioManager.Instance.SoundSettings.soundVolume;
     }
 
-    private void FixedUpdate()
+    private void Start()
     {
-        //characterController.Move(-transform.up * Time.fixedDeltaTime);
+        _SFXSource.volume = AudioManager.Instance.SoundSettings.soundVolume;
     }
 
     public void ProcessMove(Vector3 moveDir)
@@ -77,6 +78,7 @@ public class Character : MonoBehaviour
 
     public virtual void TakeDamage(GameObject instigator, int damage, int team)
     {
+        if (isDead) return;
         if (!isDamagable) return;
         if (teamIndex == team) return;
 

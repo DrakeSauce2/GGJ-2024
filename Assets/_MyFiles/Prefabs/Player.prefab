@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2970965359675033916}
   - component: {fileID: 1613174932406302114}
-  - component: {fileID: 2921220750113328335}
   - component: {fileID: 1035055698429426848}
   m_Layer: 0
   m_Name: Camera
@@ -70,7 +69,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4407
@@ -85,14 +84,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &2921220750113328335
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742673997293092405}
-  m_Enabled: 1
 --- !u!114 &1035055698429426848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,7 +276,7 @@ MonoBehaviour:
   maxHealth: 5
   animator: {fileID: 7812704732976513814}
   _SFXSource: {fileID: 3460269904267501283}
-  gruntAudio: {fileID: 8300000, guid: c78bfb7674d156542a42a0f125d6a4f0, type: 3}
+  gruntAudio: {fileID: 8300000, guid: fcdcc785322736e40a18e1efced3e0c0, type: 3}
   deathSounds: []
   invulnerableDuration: 0.5
   teamIndex: 0

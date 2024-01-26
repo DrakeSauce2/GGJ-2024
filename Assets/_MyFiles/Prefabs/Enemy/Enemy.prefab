@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 419427268973155453}
   - component: {fileID: -5656378487837174881}
   - component: {fileID: -235004107705191908}
+  - component: {fileID: -4658508803276617933}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -152,7 +153,7 @@ MonoBehaviour:
   maxHealth: 3
   animator: {fileID: 8348309942890054813}
   _SFXSource: {fileID: -235004107705191908}
-  gruntAudio: {fileID: 8300000, guid: cc5d1a5e7edb14549adea8c5de47f53c, type: 3}
+  gruntAudio: {fileID: 8300000, guid: 18cb70b18cf01e94ebbedac4e2f2d9de, type: 3}
   deathSounds:
   - {fileID: 8300000, guid: a9e41d53a5a9baf43bed89ea1a010db3, type: 3}
   - {fileID: 8300000, guid: 2ca6817fc80942c41be93219f0ecd48f, type: 3}
@@ -218,7 +219,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -303,6 +304,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-4658508803276617933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6247539345438075637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d24307d155cc7438dfc70094f9c1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visual: {fileID: 5651888582051082302}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  damagedColor: {r: 1, g: 0, b: 0, a: 1}
+  lerpSpeed: 3
+  colorAttributeName: _BaseColor
 --- !u!1001 &4805027894964292975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1490,6 +1508,12 @@ CharacterJoint:
 --- !u!4 &4982206133777066628 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 32c54c16344b9d645ad8a5d662e0bb3f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4805027894964292975}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5651888582051082302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 32c54c16344b9d645ad8a5d662e0bb3f,
     type: 3}
   m_PrefabInstance: {fileID: 4805027894964292975}
   m_PrefabAsset: {fileID: 0}

@@ -33,7 +33,6 @@ public class Player : Character
     public Camera DeathCamera { get { return deathCam; } }
 
     bool isAttacking = false;
-    bool isDead = false;
 
     private void Start()
     {
@@ -85,6 +84,8 @@ public class Player : Character
 
     private void Update()
     {
+
+
         if (spotLight)
         {
             Vector3 target = new Vector3(transform.position.x, spotlightHeight, transform.position.z);

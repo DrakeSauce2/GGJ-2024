@@ -24,7 +24,6 @@ public class RingMaster : Character
     Coroutine actionCoroutine;
 
     private bool isAttacking = false;
-    private bool isDead = false;
     [SerializeField] private bool isMoving = false;
 
     [Header("Damage Phase")]
@@ -69,6 +68,7 @@ public class RingMaster : Character
     }
     public override void TakeDamage(GameObject instigator, int damage, int team)
     {
+        if (isDead) return;
         if (damagePhase == false) return;
         if (Team == team) return;
 

@@ -89,7 +89,6 @@ public class GarbageProjectile : MonoBehaviour
 
         if (type == GarbageType.IMPACT)
         {
-            PlaySoundClip(hitSound);
             Destroy(gameObject, time / speed);
         }
 
@@ -107,19 +106,10 @@ public class GarbageProjectile : MonoBehaviour
         if (doDamage == true)
         {
             damager.StartDamage(1f);
-
             GetComponent<MeshFilter>().mesh = null;
         }
 
-
-    }
-
-    public void PlaySoundClip(AudioClip clip)
-    {
-        if (clip == null) return;
-
-        _SFXSource.clip = clip;
-        _SFXSource.Play();
+        AudioManager.Instance.PlaySoundEffect(hitSound);
     }
 
     private void OnDestroy()

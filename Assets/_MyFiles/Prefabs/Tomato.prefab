@@ -78,6 +78,8 @@ MonoBehaviour:
     type: 3}
   rangeFromPlayer: 1
   doDamage: 0
+  _SFXSource: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: 58f09135a1b1849478fa3882ce842455, type: 3}
 --- !u!114 &1478332276543514322
 MonoBehaviour:
   m_ObjectHideFlags: 0

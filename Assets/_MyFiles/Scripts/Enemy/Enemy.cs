@@ -16,7 +16,6 @@ public class Enemy : Character
 
 
     bool isAttacking = false;
-    protected bool isDead = false;
     bool isStunned = false;
 
     private void Awake()

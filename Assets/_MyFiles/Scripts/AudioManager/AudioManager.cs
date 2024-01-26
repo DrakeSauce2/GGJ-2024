@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     public SoundSettings SoundSettings { get { return soundSettings; } }
 
     [Header("Audio Sources")]
+    [SerializeField] private AudioSource _SFXSource; // To Play Destroyed Objects SFX
     [SerializeField] private AudioSource _MusicSource;
 
     [Header("Volume Sliders")]
@@ -26,6 +27,7 @@ public class AudioManager : MonoBehaviour
         if(Instance == null) Instance = this;
         else Destroy(this);
 
+        _SFXSource.volume = soundSettings.soundVolume;
         _SoundSlider.value = soundSettings.soundVolume;
 
         _MusicSlider.value = soundSettings.musicVolume;
@@ -40,10 +42,18 @@ public class AudioManager : MonoBehaviour
         SetMusicVolume();
     }
 
+    public void PlaySoundEffect(AudioClip audioClip)
+    {
+        if(audioClip == null) return;
+
+        _SFXSource.clip = audioClip;
+        _SFXSource.Play();
+    }
+
     private void SetSoundEffectVolume()
     {
 
-        soundSettings.soundVolume = _SoundSlider.value;
+        soundSettings.soundVolume = _SFXSource.volume = _SoundSlider.value;
     }
 
     private void SetMusicVolume()
