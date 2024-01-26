@@ -11,7 +11,17 @@ public class EndDoor : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(levelName);
+            StartCoroutine(ExitSequence());
         }
     }
+
+    private IEnumerator ExitSequence()
+    {
+        StartCoroutine(Transition.Instance.CutOut());
+
+        yield return new WaitForSeconds(1.5f);
+
+        SceneManager.LoadScene(levelName);
+    }
+
 }
