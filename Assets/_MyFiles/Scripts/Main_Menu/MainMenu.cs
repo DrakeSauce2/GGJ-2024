@@ -8,6 +8,12 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject mainGui;
     [SerializeField] private GameObject optionsGui;
 
+    private void Awake()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
     public void PlayButton()
     {
         SceneManager.LoadScene("Level_1");

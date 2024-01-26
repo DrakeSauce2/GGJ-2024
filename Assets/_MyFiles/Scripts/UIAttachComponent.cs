@@ -18,17 +18,15 @@ public class UIAttachComponent : MonoBehaviour
     [SerializeField] Sprite sprite_1;
     [SerializeField] Sprite sprite_2;
 
-    private void Awake()
+    public void StartFingerPoint()
     {
-        StartCoroutine(PointDown());
+        _UIObject.gameObject.SetActive(true);
 
+        StartCoroutine(PointDown());
     }
 
     private void Update()
     {
-        if (_Cam) _UIObject.gameObject.SetActive(true);
-        else _UIObject.gameObject.SetActive(false);
-
         if (_UIObject && _Cam)
         {
             _UIObject.position = _Cam.WorldToScreenPoint(attachPoint.position);

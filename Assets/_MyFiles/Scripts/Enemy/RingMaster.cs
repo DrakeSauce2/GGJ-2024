@@ -38,9 +38,6 @@ public class RingMaster : Character
     [SerializeField] Camera deathCam;
     public Camera DeathCamera { get { return deathCam; } }
 
-    [Header("Audio")]
-    [SerializeField] AudioClip openingClip;
-
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -59,7 +56,6 @@ public class RingMaster : Character
     private void Start()
     {
 
-        PlaySoundClip(openingClip);
         StartDamagePhase();
     }
     public void RemoveMinionFromList(GameObject minionToRemove)
@@ -121,10 +117,7 @@ public class RingMaster : Character
 
         healthGUI.gameObject.SetActive(false);
 
-        GameManager.Instance.OpenCurtain();
-        GameManager.Instance.SpawnEndDoor();
-
-        CameraManager.Instance.ShowRingmasterDeathCam();
+        StartCoroutine(CameraManager.Instance.ShowRingmasterDeathCam());
 
     }
 

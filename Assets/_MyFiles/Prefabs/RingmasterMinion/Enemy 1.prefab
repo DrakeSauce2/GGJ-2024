@@ -198,11 +198,9 @@ MonoBehaviour:
   maxHealth: 1
   animator: {fileID: 8348309942890054813}
   _SFXSource: {fileID: 3723620311500017504}
-  gruntAudio: {fileID: 0}
+  gruntAudio: {fileID: 8300000, guid: 18cb70b18cf01e94ebbedac4e2f2d9de, type: 3}
   deathSounds:
-  - {fileID: 8300000, guid: a9e41d53a5a9baf43bed89ea1a010db3, type: 3}
   - {fileID: 8300000, guid: 2ca6817fc80942c41be93219f0ecd48f, type: 3}
-  - {fileID: 8300000, guid: cc7006d65a56be64c86c2238b52bf694, type: 3}
   invulnerableDuration: 0
   teamIndex: 1
   isDamagable: 1

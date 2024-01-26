@@ -66,13 +66,14 @@ public class CameraManager : MonoBehaviour
 
     public IEnumerator ShowRingmasterDeathCam()
     {
-        //_camTransform.gameObject.SetActive(false);
         RingMaster.Instance.DeathCamera.gameObject.SetActive(true);
+        //_camTransform.gameObject.SetActive(false);
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
 
         //_camTransform.gameObject.SetActive(true);
         RingMaster.Instance.DeathCamera.gameObject.SetActive(false);
+        GameManager.Instance.EnableWinScreen();
     }
 
 

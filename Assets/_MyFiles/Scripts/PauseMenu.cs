@@ -31,6 +31,9 @@ public class PauseMenu : MonoBehaviour
     {
         pauseCooldown = true;
 
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+
         Time.timeScale = 0f;
         pauseMenu.SetActive(true);
         optionsMenu.SetActive(false);
@@ -46,6 +49,9 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         pauseMenu.SetActive(false);
         mainGUI.SetActive(true);
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     public void MainMenu()

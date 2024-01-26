@@ -109,7 +109,6 @@ public class GarbageProjectile : MonoBehaviour
             GetComponent<MeshFilter>().mesh = null;
         }
 
-        AudioManager.Instance.PlaySoundEffect(hitSound);
     }
 
     private void OnDestroy()

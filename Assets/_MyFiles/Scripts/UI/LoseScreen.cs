@@ -27,6 +27,9 @@ public class LoseScreen : MonoBehaviour
     {
         gameOver = true;
 
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+
         AudioManager.Instance.SetMusic(loseAudio);
 
         Time.timeScale = 0f;      

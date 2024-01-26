@@ -111,6 +111,7 @@ public class Enemy : Character
 
         isAttacking = true;
         _Animation.SetTrigger("Attack");
+        transform.LookAt(Player.Instance.transform.position);
 
         yield return new WaitForSeconds(1.5f); 
 

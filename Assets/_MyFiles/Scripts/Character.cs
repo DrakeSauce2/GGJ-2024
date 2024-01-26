@@ -128,9 +128,7 @@ public class Character : MonoBehaviour
 
     public void PlayDeathSound()
     {
-        int randNum = Random.Range(0, deathSounds.Count);
-
-        _SFXSource.clip = deathSounds[randNum];
+        _SFXSource.clip = deathSounds[0];
         _SFXSource.Play();
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] GameObject mainUI;
+    [SerializeField] GameObject winScreen;
+    [SerializeField] AudioClip winSound;
+
+    [Header("End Guide")]
+    [SerializeField] UIAttachComponent fingerPoint;
 
     private bool forceSpawnStarted = false;
 
@@ -34,6 +40,9 @@ public class GameManager : MonoBehaviour
     {
         if(Instance == null) Instance = this;
         else Destroy(this);
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
 
         Time.timeScale = 1.0f;
 
@@ -44,6 +53,8 @@ public class GameManager : MonoBehaviour
     {
         endDoor.SetActive(true);
         exitCollider.SetActive(false);
+
+        fingerPoint.StartFingerPoint();
     }
 
     public void StartEnemySpawnCycle()
@@ -135,6 +146,18 @@ public class GameManager : MonoBehaviour
 
             enemySpawner[randSpawner].InstantDelay();
         }
+    }
+
+    public void EnableWinScreen()
+    {
+
+        SceneManager.LoadScene("Credits");
+
+    }
+
+    public void CreditsButton()
+    {
+        SceneManager.LoadScene("Credits");
     }
 
     public void DisableMainUI()
