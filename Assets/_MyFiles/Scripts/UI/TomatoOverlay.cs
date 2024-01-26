@@ -20,7 +20,8 @@ public class TomatoOverlay : MonoBehaviour
         tomatoOverlay.color = new Color(tomatoOverlay.color.r,
                                         tomatoOverlay.color.g, 
                                         tomatoOverlay.color.b,  
-                                        tomatoOverlay.color.a + 0.3f);
+                                        1.5f);
+
     }
 
     private void Update()
@@ -30,7 +31,7 @@ public class TomatoOverlay : MonoBehaviour
             tomatoOverlay.color = new Color(tomatoOverlay.color.r,
                                         tomatoOverlay.color.g,
                                         tomatoOverlay.color.b,
-                                        tomatoOverlay.color.a - (0.1f * Time.deltaTime));
+                                        tomatoOverlay.color.a - (0.3f * Time.deltaTime));
         }
     }
 

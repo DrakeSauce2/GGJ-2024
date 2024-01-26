@@ -41,10 +41,10 @@ public class Timer : MonoBehaviour
 
         goalTime -= Time.deltaTime;
 
-        minutes = Mathf.FloorToInt(goalTime / 60);
-        seconds = Mathf.FloorToInt(goalTime % 60);
+        //minutes = Mathf.FloorToInt(goalTime / 60);
+        //seconds = Mathf.FloorToInt(goalTime % 60);
 
-        timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+        timerText.text = goalTime.ToString("F0");
     }
 
 }

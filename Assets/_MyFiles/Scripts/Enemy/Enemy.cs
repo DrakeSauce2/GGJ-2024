@@ -79,13 +79,10 @@ public class Enemy : Character
 
         GameManager.Instance.RemoveEnemyFromList(gameObject);
 
-        //Destroy(agent);
-
-
         ragdoll.EnableRagdoll();
         ragdoll.ApplyForce();
 
-        
+        PlayDeathSound();
 
         Destroy(gameObject, 3);
 

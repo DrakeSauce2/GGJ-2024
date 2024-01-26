@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    public static CameraManager Instance;
+
     [SerializeField] Transform followTarget;
 
     [Header("Camera")]
@@ -20,6 +22,12 @@ public class CameraManager : MonoBehaviour
     [SerializeField] float minX, maxX;
 
     private Vector3 refVelocity = Vector3.zero;
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(this);
+    }
 
     private void Update()
     {
@@ -48,6 +56,23 @@ public class CameraManager : MonoBehaviour
                                                              _camTransform.position.z);
         }
 
+    }
+
+    public void ShowJojoDeathCam()
+    {
+        //_camTransform.gameObject.SetActive(false);
+        Player.Instance.DeathCamera.gameObject.SetActive(true);
+    }
+
+    public IEnumerator ShowRingmasterDeathCam()
+    {
+        //_camTransform.gameObject.SetActive(false);
+        RingMaster.Instance.DeathCamera.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(5f);
+
+        //_camTransform.gameObject.SetActive(true);
+        RingMaster.Instance.DeathCamera.gameObject.SetActive(false);
     }
 
 

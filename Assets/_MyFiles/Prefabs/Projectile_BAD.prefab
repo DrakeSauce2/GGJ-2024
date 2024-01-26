@@ -78,6 +78,7 @@ MonoBehaviour:
     type: 3}
   rangeFromPlayer: 3
   doDamage: 1
+  hitSound: {fileID: 0}
 --- !u!33 &8808513078267669155
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: {fileID: 6312980804255713903}
   damage: 1
-  team: 1
+  team: 2
 --- !u!114 &-9060181544670018854
 MonoBehaviour:
   m_ObjectHideFlags: 0

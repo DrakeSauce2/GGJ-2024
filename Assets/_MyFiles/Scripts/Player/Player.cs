@@ -16,14 +16,21 @@ public class Player : Character
     [Header("Attack LayerMask")]
     [SerializeField] private LayerMask attackMask;
 
-    [Header("Hat")]
-    [SerializeField] private GameObject headObj;
-    [SerializeField] private Transform headPoint;
+    [Header("Death Sound")]
+    [SerializeField] AudioClip deathSound;
 
     [Header("Bug Fix")]
     [SerializeField] Transform jojo;
 
-    public Transform HeadPoint { get { return headPoint; } }
+    [Header("Spotlight")]
+    private Transform spotLight;
+    private Vector3 refVel;
+    [SerializeField, Range(0, 10)] float followSpeed;
+    [SerializeField] float spotlightHeight = 10f;
+
+    [Header("Death Cam")]
+    [SerializeField] Camera deathCam;
+    public Camera DeathCamera { get { return deathCam; } }
 
     bool isAttacking = false;
     bool isDead = false;
@@ -46,6 +53,8 @@ public class Player : Character
         playerInputActions.Main.Attack.performed += ProcessAttack;
         playerInputActions.Main.Pause.performed += InitiatePause;
         healthComponent.onDeath += StartDeath;
+
+        spotLight = GameManager.Instance.spotLight;
     }
 
     private void InitiatePause(InputAction.CallbackContext context)
@@ -57,6 +66,10 @@ public class Player : Character
     {
         isDead = true;
 
+        _Animation.SetBool("isDead", isDead);
+        PlaySoundClip(deathSound);
+
+        CameraManager.Instance.ShowJojoDeathCam();
         StartCoroutine(DeathCoroutine());
 
     }
@@ -70,6 +83,13 @@ public class Player : Character
 
     private void Update()
     {
+        if (spotLight)
+        {
+            Vector3 target = new Vector3(transform.position.x, spotlightHeight, transform.position.z);
+
+            spotLight.position = Vector3.SmoothDamp(spotLight.position, target, ref refVel, followSpeed);
+        }
+
         jojo.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
     }
 
@@ -101,10 +121,13 @@ public class Player : Character
     private IEnumerator AttackCoroutine()
     {
         isAttacking = true;
+        _Animation.SetTrigger("Attack");
 
         damager.StartDamage(0.1f);
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
+
+        _Animation.ResetTrigger("Attack");
 
         isAttacking = false;
     }

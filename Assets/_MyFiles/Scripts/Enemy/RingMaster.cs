@@ -18,10 +18,6 @@ public class RingMaster : Character
     [SerializeField] Transform[] movePoints;
     [SerializeField] Transform[] damagePoints;
 
-    [Header("Hats")]
-    [SerializeField] GameObject realHat;
-    [SerializeField] GameObject animHat;
-
     [Header("Look At Point")]
     [SerializeField] Transform lookAtPoint;
 
@@ -39,6 +35,12 @@ public class RingMaster : Character
     [SerializeField] List<TimedSpawner> spawners = new List<TimedSpawner>();
     [SerializeField] List<GameObject> instancedMinions = new List<GameObject>();
 
+    [Header("Death Cam")]
+    [SerializeField] Camera deathCam;
+    public Camera DeathCamera { get { return deathCam; } }
+
+    [Header("Audio")]
+    [SerializeField] AudioClip openingClip;
 
     private void Awake()
     {
@@ -57,6 +59,8 @@ public class RingMaster : Character
 
     private void Start()
     {
+
+        PlaySoundClip(openingClip);
         StartDamagePhase();
     }
     public void RemoveMinionFromList(GameObject minionToRemove)
@@ -104,7 +108,6 @@ public class RingMaster : Character
 
         StartCoroutine(MoveToPoint(damagePoints[phaseCount]));
 
-        damagePhase = true;
     }
 
     private void StartDeath()
@@ -120,16 +123,26 @@ public class RingMaster : Character
         GameManager.Instance.OpenCurtain();
         GameManager.Instance.SpawnEndDoor();
 
+        CameraManager.Instance.ShowRingmasterDeathCam();
 
     }
 
     private void Update()
     {
+        if(agent != null)
+            _Animation.SetFloat("Speed", agent.velocity.magnitude);
+
         if (isAttacking || isDead || isMoving) return;
 
         if (instancedMinions.Count <= 0 && damagePhase == false)
         {
+            damagePhase = true;
+
+            if(actionCoroutine != null)
+                StopCoroutine(actionCoroutine);
+
             StartDamagePhase();
+            return;
         }
 
         switch (Random.Range(1, 4)) 
@@ -159,32 +172,47 @@ public class RingMaster : Character
     public IEnumerator AttackCoroutine()
     {
         if (agent == null) yield return null;
+        if (isMoving) yield return null;
+
 
         isAttacking = true;
+        _Animation.SetTrigger("Attack1");
 
         // Attack Stuff and animation here
         damager.StartDamage(1f);
 
         yield return new WaitForSeconds(1.5f); // Arbitrary time until animations are implemented
+
+        _Animation.ResetTrigger("Attack1");
         isAttacking = false;
     }
 
     public IEnumerator SummonEnemies()
     {
+        if (isMoving) yield return null;
+
         isAttacking = true;
+
+        _Animation.SetTrigger("Attack1");
         GameManager.Instance.InstantForceSpawn();
 
         yield return new WaitForSeconds(5f);
+
+        _Animation.ResetTrigger("Attack1");
         isAttacking = false;
     }
 
     public IEnumerator AngerCrowd()
     {
+        if (isMoving) yield return null;
+
         isAttacking = true;
         AudienceEnergy.Instance.SetOverrideEnergyMeter(true);
+        _Animation.SetTrigger("Attack1");
 
         yield return new WaitForSeconds(2f);
 
+        _Animation.ResetTrigger("Attack1");
         isAttacking = false;
         AudienceEnergy.Instance.SetOverrideEnergyMeter(false);
     }
@@ -214,6 +242,8 @@ public class RingMaster : Character
 
             yield return new WaitForEndOfFrame();
         }
+
+        yield return new WaitForSeconds(2f);
 
         isMoving = false;
     }

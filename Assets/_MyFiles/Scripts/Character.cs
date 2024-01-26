@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
@@ -16,6 +17,13 @@ public class Character : MonoBehaviour
     [SerializeField] private int maxHealth;
     [Header("Animations")]
     [SerializeField] Animator animator;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource _SFXSource;
+    [SerializeField] AudioClip gruntAudio;
+
+    [Header("Death Sounds")]
+    [SerializeField] List<AudioClip> deathSounds;
 
     public Animator _Animation { get { return animator; } }
 
@@ -42,6 +50,15 @@ public class Character : MonoBehaviour
             healthComponent.Init(owner);
 
         currentMovementSpeed = movementSpeed;
+
+        Debug.Log(_SFXSource);
+        Debug.Log(AudioManager.Instance);
+    }
+
+
+    private void Start()
+    {
+        _SFXSource.volume = AudioManager.Instance.SoundSettings.soundVolume;
     }
 
     public void ProcessMove(Vector3 moveDir)
@@ -63,7 +80,7 @@ public class Character : MonoBehaviour
 
         StartCoroutine(InvulnerabeCoroutine());
 
-
+        PlaySoundClip(gruntAudio);
     }
 
     public void Heal(int healAmount)
@@ -93,5 +110,22 @@ public class Character : MonoBehaviour
 
         isDamagable = true;
     }
+
+    public void PlaySoundClip(AudioClip clip)
+    {
+        if (clip == null) return;
+
+        _SFXSource.clip = clip;
+        _SFXSource.Play();
+    }
+
+    public void PlayDeathSound()
+    {
+        int randNum = Random.Range(0, deathSounds.Count);
+
+        _SFXSource.clip = deathSounds[randNum];
+        _SFXSource.Play();
+    }
+
 
 }

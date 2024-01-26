@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
     [Header("Enemy")]
     [SerializeField] List<GameObject> instancedSpawns = new List<GameObject>();
     [SerializeField] List<TimedSpawner> enemySpawner;
+    [Space]
+
+    [SerializeField] Transform spotlight;
+    public Transform spotLight { get { return spotlight; } }
 
     [SerializeField] GameObject endDoor;
 
@@ -20,6 +24,9 @@ public class GameManager : MonoBehaviour
     [Header("Curtains")]
     [SerializeField] Animator curtainAnimator;
     [SerializeField] GameObject exitCollider;
+
+    [Header("UI")]
+    [SerializeField] GameObject mainUI;
 
     private bool forceSpawnStarted = false;
 
@@ -128,6 +135,11 @@ public class GameManager : MonoBehaviour
 
             enemySpawner[randSpawner].InstantDelay();
         }
+    }
+
+    public void DisableMainUI()
+    {
+        mainUI.SetActive(false);
     }
 
 }

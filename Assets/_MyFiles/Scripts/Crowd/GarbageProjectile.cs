@@ -26,6 +26,10 @@ public class GarbageProjectile : MonoBehaviour
 
     [SerializeField] private bool doDamage = false;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource _SFXSource;
+    [SerializeField] AudioClip hitSound;
+
     private void Start()
     {
         damager = GetComponent<Damager>();
@@ -83,8 +87,11 @@ public class GarbageProjectile : MonoBehaviour
     {
         float t = 0;
 
-        if(type == GarbageType.IMPACT)
-        Destroy(gameObject, time / speed);
+        if (type == GarbageType.IMPACT)
+        {
+            PlaySoundClip(hitSound);
+            Destroy(gameObject, time / speed);
+        }
 
         while (t < time)
         {
@@ -99,10 +106,20 @@ public class GarbageProjectile : MonoBehaviour
 
         if (doDamage == true)
         {
-            damager.StartDamage(0.5f);
+            damager.StartDamage(1f);
 
             GetComponent<MeshFilter>().mesh = null;
         }
+
+
+    }
+
+    public void PlaySoundClip(AudioClip clip)
+    {
+        if (clip == null) return;
+
+        _SFXSource.clip = clip;
+        _SFXSource.Play();
     }
 
     private void OnDestroy()
