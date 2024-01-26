@@ -2155,7 +2155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b37124eb6f6e5c4ba7b2c8caff0e1de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: MainMenu
+  levelName: Credits
 --- !u!65 &561754267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2953,8 +2953,6 @@ MonoBehaviour:
   camHeight: 5
   armLength: -15
   followSpeed: 1.4
-  jojoDeathLookAt: {fileID: 0}
-  ringmasterDeathLookAt: {fileID: 1392500658}
   lookAt: 0
   clampX: 1
   minX: -1.5
@@ -3001,6 +2999,7 @@ MonoBehaviour:
   maxSpawnersToUse: 3
   curtainAnimator: {fileID: 236463351}
   exitCollider: {fileID: 955362235}
+  mainUI: {fileID: 1582552970}
 --- !u!114 &853150327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5969,7 +5968,7 @@ PrefabInstance:
     - target: {fileID: 6247539345438075634, guid: 33652f1706547804fa48dc9e5898f48f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6247539345438075634, guid: 33652f1706547804fa48dc9e5898f48f,
         type: 3}
@@ -5979,7 +5978,7 @@ PrefabInstance:
     - target: {fileID: 6247539345438075634, guid: 33652f1706547804fa48dc9e5898f48f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.81
+      value: 6.66
       objectReference: {fileID: 0}
     - target: {fileID: 6247539345438075634, guid: 33652f1706547804fa48dc9e5898f48f,
         type: 3}
@@ -6026,11 +6025,21 @@ PrefabInstance:
       propertyPath: m_WarningMessage
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8625833382667047084, guid: 33652f1706547804fa48dc9e5898f48f,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 5687
+      objectReference: {fileID: 0}
     - target: {fileID: 8781483215272762854, guid: 33652f1706547804fa48dc9e5898f48f,
         type: 3}
       propertyPath: health
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 8781483215272762854, guid: 33652f1706547804fa48dc9e5898f48f,
+        type: 3}
+      propertyPath: deathCam
+      value: 
+      objectReference: {fileID: 1392500658}
     - target: {fileID: 8781483215272762854, guid: 33652f1706547804fa48dc9e5898f48f,
         type: 3}
       propertyPath: healthGUI
