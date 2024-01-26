@@ -26,10 +26,7 @@ public class GarbageProjectile : MonoBehaviour
 
     [SerializeField] private bool doDamage = false;
 
-    [Header("Audio")]
-    [SerializeField] private AudioSource _SFXSource;
-    [SerializeField] AudioClip hitSound;
-
+    
     private void Start()
     {
         damager = GetComponent<Damager>();
@@ -109,6 +106,7 @@ public class GarbageProjectile : MonoBehaviour
             GetComponent<MeshFilter>().mesh = null;
         }
 
+        
     }
 
     private void OnDestroy()

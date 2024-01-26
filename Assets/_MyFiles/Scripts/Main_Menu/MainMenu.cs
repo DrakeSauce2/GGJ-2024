@@ -15,7 +15,14 @@ public class MainMenu : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
 
-        StartCoroutine(Transition.Instance.CutIn());
+        
+    }
+
+    private void Start()
+    {
+        if (Transition.Instance)
+            StartCoroutine(Transition.Instance.CutIn());
+
     }
 
     public void PlayButton()

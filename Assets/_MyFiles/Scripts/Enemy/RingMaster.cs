@@ -76,6 +76,8 @@ public class RingMaster : Character
         healthComponent.onHealthChanged?.Invoke(instigator, Health, MaxHealth);
         healthGUI.onHealthChanged?.Invoke(Health);
 
+        PlaySoundClip(gruntAudio);
+
         if (damageDoneInThisPhase > 10)
         {
             EndOfDamagePhase();
@@ -121,10 +123,16 @@ public class RingMaster : Character
 
     }
 
+    private void FixedUpdate()
+    {
+        if (agent != null)
+            _Animation.SetFloat("Speed", agent.velocity.magnitude);
+    }
+
     private void Update()
     {
-        if(agent != null)
-            _Animation.SetFloat("Speed", agent.velocity.magnitude);
+
+        if (damagePhase) return;
 
         if (isAttacking || isDead || isMoving) return;
 
@@ -170,14 +178,14 @@ public class RingMaster : Character
 
 
         isAttacking = true;
-        _Animation.SetTrigger("Attack1");
+        _Animation.SetTrigger("Attack2");
 
         // Attack Stuff and animation here
         damager.StartDamage(1f);
 
-        yield return new WaitForSeconds(1.5f); // Arbitrary time until animations are implemented
+        yield return new WaitForSeconds(3); // Arbitrary time until animations are implemented
 
-        _Animation.ResetTrigger("Attack1");
+        _Animation.ResetTrigger("Attack2");
         isAttacking = false;
     }
 
@@ -204,7 +212,7 @@ public class RingMaster : Character
         AudienceEnergy.Instance.SetOverrideEnergyMeter(true);
         _Animation.SetTrigger("Attack1");
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         _Animation.ResetTrigger("Attack1");
         isAttacking = false;
@@ -221,13 +229,14 @@ public class RingMaster : Character
         while (distance > 1f)
         {
             distance = Vector3.Distance(transform.position, point.position);
+            _Animation.SetFloat("Speed", agent.velocity.normalized.magnitude);
 
             Debug.Log("Ringmaster Moving!");
 
             yield return new WaitForEndOfFrame();
         }
 
-        float t = 2f;
+        float t = 1f;
         while (t > 0)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, point.rotation, Time.deltaTime * 5f);
@@ -237,7 +246,7 @@ public class RingMaster : Character
             yield return new WaitForEndOfFrame();
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(.3f);
 
         isMoving = false;
     }

@@ -9,7 +9,7 @@ public class Damager : MonoBehaviour
     [SerializeField] int team;
 
     Coroutine damageCoroutine = null;
-
+    
     private void Awake()
     {
         trigger.Init(gameObject, damage, team);

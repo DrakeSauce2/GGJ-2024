@@ -30,6 +30,8 @@ public class LoseScreen : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
 
+        
+
         AudioManager.Instance.SetMusic(loseAudio);
 
         Time.timeScale = 0f;      
@@ -39,12 +41,34 @@ public class LoseScreen : MonoBehaviour
 
     public void MainMenu()
     {
+        StartCoroutine(MainMenuCoroutine());
+    }
+
+    private IEnumerator MainMenuCoroutine()
+    {
+        Time.timeScale = 1f;
+        StartCoroutine(Transition.Instance.CutOut());
+
+        yield return new WaitForSeconds(1f);
+
         SceneManager.LoadScene("MainMenu");
+
     }
 
     public void Restart()
     {
+        StartCoroutine(RestartCoroutine());
+    }
+
+    private IEnumerator RestartCoroutine()
+    {
+        Time.timeScale = 1f;
+        StartCoroutine(Transition.Instance.CutOut());
+
+        yield return new WaitForSeconds(1f);
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
 
 }

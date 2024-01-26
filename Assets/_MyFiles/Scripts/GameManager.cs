@@ -47,6 +47,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1.0f;
 
         Instantiate(playerPrefab, playerSpawnPoint.position, Quaternion.identity);
+
+    }
+
+    private void Start()
+    {
+
+        StartCoroutine(Transition.Instance.CutIn());
     }
 
     public void SpawnEndDoor()
@@ -151,7 +158,7 @@ public class GameManager : MonoBehaviour
     public void EnableWinScreen()
     {
 
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("CreditsPre");
 
     }
 

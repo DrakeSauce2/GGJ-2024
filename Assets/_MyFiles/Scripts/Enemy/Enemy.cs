@@ -35,6 +35,11 @@ public class Enemy : Character
 
     private void DamageTaken(GameObject instigator, int health, int maxHealth)
     {
+        if(isStunned == true)
+        {
+            StopCoroutine(StunCoroutine());
+        }
+
         stunCoroutine = StartCoroutine(StunCoroutine());
     }
 
@@ -63,6 +68,9 @@ public class Enemy : Character
 
     public virtual void StartDeath()
     {
+
+        PlaySoundClip(deathSounds[0]);
+
         isDead = true;
         gameObject.layer = 7;
 
@@ -81,7 +89,6 @@ public class Enemy : Character
         ragdoll.EnableRagdoll();
         ragdoll.ApplyForce();
 
-        PlayDeathSound();
 
         Destroy(gameObject, 3);
 

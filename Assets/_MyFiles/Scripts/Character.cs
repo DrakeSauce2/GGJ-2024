@@ -20,10 +20,11 @@ public class Character : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource _SFXSource;
-    [SerializeField] AudioClip gruntAudio;
+    [SerializeField] protected AudioClip gruntAudio;
 
     [Header("Death Sounds")]
-    [SerializeField] List<AudioClip> deathSounds;
+    [SerializeField] protected List<AudioClip> deathSounds;
+    [SerializeField] AudioClip healSound;
 
     public Animator _Animation { get { return animator; } }
 
@@ -95,6 +96,8 @@ public class Character : MonoBehaviour
         health += healAmount;
 
         if(health >= maxHealth) health = maxHealth;
+
+        AudioManager.Instance.PlaySoundEffect(healSound);
 
         healthComponent.onHealthChanged?.Invoke(null, health, maxHealth);
     }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Transition : MonoBehaviour
 {
-    public static Transition Instance { get; private set; }
+    public static Transition Instance;
 
     [SerializeField] Image transitionImage;
 

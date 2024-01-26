@@ -78,8 +78,6 @@ MonoBehaviour:
     type: 3}
   rangeFromPlayer: 3
   doDamage: 0
-  _SFXSource: {fileID: 0}
-  hitSound: {fileID: 0}
 --- !u!114 &1478332276543514322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa9e9cda3a31cb4b99876fdd36b9be6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healAmount: 1
+  healAmount: 2
   _SFXSource: {fileID: 2468680322356828048}
   pickupSound: {fileID: 8300000, guid: 47227011f0a88c448840b684fbed0a94, type: 3}
 --- !u!82 &2468680322356828048

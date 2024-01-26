@@ -21,6 +21,8 @@ public class EndDoor : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
 
+        Destroy(Player.Instance);
+
         SceneManager.LoadScene(levelName);
     }
 

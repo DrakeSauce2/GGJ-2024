@@ -9,6 +9,11 @@ public class DamageTrigger : MonoBehaviour
     private int damage;
     private int team;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource _SFXSource;
+    [SerializeField] AudioClip hitSound;
+
+
     public void Init(GameObject owner, int damage, int team)
     {
         Owner = owner;
@@ -29,6 +34,12 @@ public class DamageTrigger : MonoBehaviour
         {
             AudienceEnergy.Instance.GainEnergy();
         }
+
+        if (hitSound == null) return;
+
+        _SFXSource.volume = AudioManager.Instance.SoundSettings.soundVolume;
+        _SFXSource.clip = hitSound;
+        _SFXSource.Play();
 
     }
 }

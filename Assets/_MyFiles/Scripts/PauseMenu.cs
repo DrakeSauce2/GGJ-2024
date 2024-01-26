@@ -56,7 +56,20 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        StartCoroutine(MainMenuCoroutine());
+    }
+
+    private IEnumerator MainMenuCoroutine()
+    {
+        Debug.Log("Doing stuff");
+
+        Time.timeScale = 1f;
+        StartCoroutine(Transition.Instance.CutOut());
+
+        yield return new WaitForSeconds(1.5f);
+
         Destroy(Player.Instance.gameObject);
+        //Destroy(Transition.Instance.gameObject);
         Destroy(gameObject);
 
         SceneManager.LoadScene("MainMenu");
