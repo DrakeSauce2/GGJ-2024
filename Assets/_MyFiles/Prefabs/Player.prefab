@@ -289,7 +289,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: fa12445ec43ce68439ae1c85d87dbd44, type: 3}
   jojo: {fileID: 4218853995171141996}
   followSpeed: 0.5
-  spotlightHeight: 10
+  spotlightHeight: 8
   deathCam: {fileID: 1613174932406302114}
 --- !u!114 &7510875403540623649
 MonoBehaviour:

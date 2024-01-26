@@ -38,6 +38,15 @@ public class RingMaster : Character
     [SerializeField] Camera deathCam;
     public Camera DeathCamera { get { return deathCam; } }
 
+    [Header("Spotlight")]
+    [SerializeField] private Transform spotLight;
+    private Vector3 refVel;
+    [SerializeField, Range(0, 10)] float followSpeed;
+    [SerializeField] float spotlightHeight = 10f;
+    [SerializeField] Color nonDamageColor;
+    [SerializeField] Color damageColor;
+
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -96,12 +105,16 @@ public class RingMaster : Character
         damagePhase = false;
         damageDoneInThisPhase = 0;
 
+        spotLight.GetComponent<Light>().color = nonDamageColor;
+
         StartCoroutine(MoveToPoint(movePoints[phaseCount]));
 
         phaseCount++;
     }
     public void StartDamagePhase()
     {
+        spotLight.GetComponent<Light>().color = damageColor;
+
         GameManager.Instance.KillAllInstancedSpawns();
 
         StartCoroutine(MoveToPoint(damagePoints[phaseCount]));
@@ -131,6 +144,12 @@ public class RingMaster : Character
 
     private void Update()
     {
+        if (spotLight)
+        {
+            Vector3 target = new Vector3(transform.position.x, spotlightHeight, transform.position.z);
+
+            spotLight.position = Vector3.SmoothDamp(spotLight.position, target, ref refVel, followSpeed);
+        }
 
         if (damagePhase) return;
 

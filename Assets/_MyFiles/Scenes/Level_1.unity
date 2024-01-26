@@ -2533,7 +2533,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1016427537
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5227,6 +5227,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1582552973}
     m_Modifications:
+    - target: {fileID: 2251283792655467189, guid: 70678ff12e8fbae4ca41b64d741f3228,
+        type: 3}
+      propertyPath: goalTime
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 7318730896054351163, guid: 70678ff12e8fbae4ca41b64d741f3228,
         type: 3}
       propertyPath: m_Pivot.x

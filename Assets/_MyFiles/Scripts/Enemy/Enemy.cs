@@ -69,7 +69,7 @@ public class Enemy : Character
     public virtual void StartDeath()
     {
 
-        PlaySoundClip(deathSounds[0]);
+        AudioManager.Instance.PlaySoundEffect(deathSounds[0]);
 
         isDead = true;
         gameObject.layer = 7;
