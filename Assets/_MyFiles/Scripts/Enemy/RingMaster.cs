@@ -113,6 +113,7 @@ public class RingMaster : Character
     private void StartDeath()
     {
         isDead = true;
+        _Animation.SetBool("isDead", isDead);
 
         GameManager.Instance.StopEnemySpawnCycle();
         GameManager.Instance.KillAllInstancedSpawns();

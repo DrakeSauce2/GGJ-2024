@@ -61,6 +61,11 @@ public class Character : MonoBehaviour
         _SFXSource.volume = AudioManager.Instance.SoundSettings.soundVolume;
     }
 
+    private void FixedUpdate()
+    {
+        //characterController.Move(-transform.up * Time.fixedDeltaTime);
+    }
+
     public void ProcessMove(Vector3 moveDir)
     {
         

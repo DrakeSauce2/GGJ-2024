@@ -66,6 +66,8 @@ public class Player : Character
     {
         isDead = true;
 
+        GameManager.Instance.DisableMainUI();
+
         _Animation.SetBool("isDead", isDead);
         PlaySoundClip(deathSound);
 
